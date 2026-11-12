@@ -1,0 +1,482 @@
+/* =========================================================
+   Gratius Tours & Travel — shared professional theme
+   Uses the site's existing palette only.
+   ========================================================= */
+:root {
+  --safari-blue: #003366;
+  --safari-blue-dark: #002244;
+  --safari-gold: #f4c430;
+  --safari-gold-dark: #e0a800;
+  --safari-green: #004d00;
+  --safari-green-soft: #235236;
+  --ink: #23272b;
+  --muted: #6c757d;
+  --radius: 14px;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, .06);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, .12);
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 { letter-spacing: -.01em; }
+p { line-height: 1.7; }
+img { max-width: 100%; }
+
+::selection { background: var(--safari-gold); color: #111; }
+
+a:focus-visible, button:focus-visible, .btn:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--safari-gold);
+  outline-offset: 2px;
+}
+
+/* Section headings get a small gold accent bar */
+section > .container > h2.text-center,
+section h2.section-title {
+  position: relative;
+  padding-bottom: 14px;
+}
+section > .container > h2.text-center::after,
+section h2.section-title::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 64px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--safari-gold);
+  transform: translateX(-50%);
+}
+.section-eyebrow {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--safari-gold-dark);
+  margin-bottom: .5rem;
+}
+
+/* ---------- Navbar (colour unchanged) ---------- */
+.navbar {
+  padding-top: .65rem;
+  padding-bottom: .65rem;
+  transition: background-color .3s ease, padding .3s ease, box-shadow .3s ease;
+}
+.navbar.scrolled {
+  padding-top: .4rem;
+  padding-bottom: .4rem;
+}
+.navbar-brand img { box-shadow: 0 0 0 2px rgba(255, 255, 255, .85); }
+.navbar .brand-name { font-weight: 700; }
+
+@media (min-width: 992px) {
+  .navbar .nav-link {
+    position: relative;
+    margin: 0 .35rem;
+  }
+  .navbar .nav-link::after {
+    content: "";
+    position: absolute;
+    left: .5rem;
+    right: .5rem;
+    bottom: .2rem;
+    height: 2px;
+    background: var(--safari-gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s ease;
+  }
+  .navbar .nav-link:hover::after,
+  .navbar .nav-link.active::after { transform: scaleX(1); }
+}
+.navbar .nav-link.active { color: var(--safari-gold) !important; }
+
+.btn-book {
+  background: var(--safari-gold);
+  color: #1a1a1a !important;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: .5rem 1.3rem;
+  border: none;
+  box-shadow: 0 4px 14px rgba(244, 196, 48, .35);
+  transition: transform .2s ease, background-color .2s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn-book:hover {
+  background: var(--safari-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(244, 196, 48, .45);
+}
+@media (max-width: 991.98px) {
+  .navbar .btn-book { display: inline-block; margin: .5rem 0 .75rem; }
+}
+
+/* ---------- Buttons ---------- */
+.btn { font-weight: 600; border-radius: 50px; transition: all .25s ease; }
+.btn-lg { padding: .8rem 2rem; }
+
+.btn-warning {
+  background-color: var(--safari-gold);
+  border-color: var(--safari-gold);
+  color: #1a1a1a;
+  box-shadow: 0 6px 18px rgba(244, 196, 48, .3);
+}
+.btn-warning:hover, .btn-warning:focus {
+  background-color: var(--safari-gold-dark);
+  border-color: var(--safari-gold-dark);
+  color: #1a1a1a;
+  transform: translateY(-2px);
+}
+
+.btn-safari {
+  background: var(--safari-blue);
+  color: #fff;
+  border-radius: 50px;
+  box-shadow: 0 6px 18px rgba(0, 51, 102, .3);
+}
+.btn-safari:hover { background: var(--safari-blue-dark); color: #fff; transform: translateY(-2px); }
+
+.btn-ghost {
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, .85);
+  background: transparent;
+}
+.btn-ghost:hover { background: #fff; color: var(--safari-blue); }
+
+/* ---------- Cards ---------- */
+.card { border-radius: var(--radius); }
+.tour-card .card-body { display: flex; flex-direction: column; }
+.tour-card h5 { line-height: 1.35; }
+
+.tour-cta {
+  margin-top: auto;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(0, 0, 0, .07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+}
+.tour-cta .view-link {
+  font-weight: 600;
+  color: var(--safari-green);
+  font-size: .95rem;
+}
+.tour-cta .view-link i { transition: transform .25s ease; display: inline-block; }
+.tour-card:hover .tour-cta .view-link i { transform: translateX(4px); }
+.tour-cta .tag {
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--safari-blue);
+  background: rgba(0, 51, 102, .08);
+  border-radius: 50px;
+  padding: .25rem .7rem;
+}
+
+/* Destination cards on home page become links */
+.dest-link { color: inherit; text-decoration: none; display: block; height: 100%; }
+.dest-link:hover { color: inherit; }
+.dest-link .card-body p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.dest-link .more {
+  font-size: .9rem;
+  font-weight: 600;
+  color: var(--safari-green);
+}
+
+/* ---------- Home: hero ---------- */
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: rgba(255, 255, 255, .12);
+  border: 1px solid rgba(255, 255, 255, .25);
+  backdrop-filter: blur(6px);
+  padding: .4rem 1rem;
+  border-radius: 50px;
+  font-size: .85rem;
+  letter-spacing: .04em;
+  margin-bottom: 1.2rem;
+}
+.hero-eyebrow i { color: var(--safari-gold); }
+.hero-title { line-height: 1.1; text-shadow: 0 4px 24px rgba(0, 0, 0, .35); }
+.hero-title span { display: block; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 1.8rem; }
+.hero-points {
+  display: flex; flex-wrap: wrap; gap: 1.4rem;
+  margin-top: 2rem; padding: 0; list-style: none;
+  font-size: .95rem; opacity: .95;
+}
+.hero-points i { color: var(--safari-gold); margin-right: .4rem; }
+
+.hero-scroll {
+  position: absolute; left: 50%; bottom: 26px;
+  transform: translateX(-50%);
+  color: #fff; font-size: 1.6rem; opacity: .85;
+  animation: heroBounce 2.2s infinite;
+  z-index: 2;
+}
+@keyframes heroBounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -10px); }
+}
+
+/* ---------- Home: trust strip ---------- */
+.trust-strip {
+  background: var(--safari-blue);
+  color: #fff;
+}
+.trust-strip .item {
+  display: flex; align-items: center; gap: .9rem;
+  padding: 1.4rem .5rem;
+}
+.trust-strip .item i {
+  font-size: 1.6rem; color: var(--safari-gold);
+  width: 52px; height: 52px; flex: 0 0 52px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+}
+.trust-strip h6 { margin: 0; font-weight: 600; }
+.trust-strip small { opacity: .75; }
+
+/* ---------- Home: how it works ---------- */
+.steps .step {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 2rem 1.6rem;
+  height: 100%;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+.steps .step:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); }
+.steps .num {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--safari-gold); color: #1a1a1a;
+  font-weight: 700; display: grid; place-items: center;
+  margin: 0 auto 1rem;
+  font-size: 1.1rem;
+}
+.steps .step i { color: var(--safari-blue); }
+
+/* ---------- CTA band ---------- */
+.cta-band {
+  position: relative;
+  color: #fff;
+  background:
+    linear-gradient(120deg, rgba(0, 51, 102, .92), rgba(0, 77, 0, .85)),
+    url('../images/elephants.jpeg') center/cover no-repeat;
+  padding: 80px 0;
+  overflow: hidden;
+}
+.cta-band h2 { font-weight: 800; }
+.cta-band p { opacity: .9; max-width: 620px; margin: 0 auto 1.8rem; }
+
+/* ---------- Tour detail: booking card ---------- */
+.book-card {
+  background: linear-gradient(160deg, var(--safari-blue), #00264d);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 25px;
+}
+.book-card h5 { font-weight: 700; }
+.book-card ul { list-style: none; padding: 0; margin: 1rem 0 1.3rem; font-size: .92rem; }
+.book-card li { padding: .3rem 0; }
+.book-card li i { color: var(--safari-gold); margin-right: .5rem; }
+.book-card .btn-outline-light { border-radius: 50px; }
+
+/* ---------- Footer ---------- */
+footer { position: relative; }
+footer h5 { font-weight: 700; margin-bottom: 1rem; }
+footer hr { border-color: rgba(255, 255, 255, .2); opacity: 1; }
+footer .quick-links a { transition: color .2s ease, padding-left .2s ease; }
+footer .quick-links a:hover { padding-left: 4px; }
+
+/* ---------- SAVANNA HORIZON (above footer) ---------- */
+.horizon {
+  position: relative; height: 170px; overflow: hidden;
+  background: linear-gradient(180deg, #235236 0%, #1d4a2f 100%);
+}
+.horizon .sun {
+  position: absolute; left: 50%; bottom: -120px; transform: translateX(-50%);
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 196, 48, .9) 0%, rgba(244, 196, 48, .45) 45%, rgba(244, 196, 48, 0) 70%);
+}
+.horizon .herd {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  display: flex; align-items: flex-end; justify-content: space-around;
+  padding: 0 2%;
+}
+.horizon .sil {
+  display: block; object-fit: contain; object-position: bottom;
+  filter: brightness(0); opacity: .82;
+}
+.horizon .ground { position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: #0b1f0e; opacity: .82; }
+.horizon .tree { position: absolute; bottom: 0; fill: #0b1f0e; opacity: .82; }
+@media (max-width: 767.98px) {
+  .horizon { height: 120px; }
+  .horizon .sil { transform: scale(.7); transform-origin: bottom; }
+  .horizon .sil.opt { display: none; }
+}
+
+
+/* ---------- Mobile navbar: keep menu button beside the brand ---------- */
+@media (max-width: 576px) {
+  .navbar > .container { flex-wrap: wrap; }
+  .navbar-brand { max-width: calc(100% - 64px); margin-right: 0; }
+  .navbar .brand-name { white-space: normal !important; font-size: .85rem !important; line-height: 1.2; }
+}
+
+/* ---------- Floating WhatsApp ---------- */
+.fab-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  background: var(--safari-green);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: .7rem 1.1rem .7rem .8rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .28);
+  font-weight: 600;
+  font-size: .92rem;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.fab-whatsapp i { font-size: 1.6rem; }
+.fab-whatsapp:hover { color: #fff; transform: translateY(-3px); box-shadow: 0 14px 32px rgba(0, 0, 0, .32); }
+.fab-whatsapp::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: inherit;
+  border: 2px solid var(--safari-green);
+  animation: fabPulse 2.4s infinite;
+  pointer-events: none;
+}
+@keyframes fabPulse {
+  0% { transform: scale(1); opacity: .7; }
+  100% { transform: scale(1.35); opacity: 0; }
+}
+@media (max-width: 576px) {
+  .fab-whatsapp span { display: none; }
+  .fab-whatsapp { padding: .8rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* ---------- Brand: Gratius logo emblem in the navbar ---------- */
+.brand-logo {
+  display: inline-block; flex: 0 0 50px; width: 50px; height: 50px; border-radius: 50%;
+  background: #0b2410 url("../images/gratius-logo.png") 50% 17% / 190% no-repeat;
+  box-shadow: 0 0 0 2px var(--safari-gold), 0 4px 12px rgba(0, 0, 0, .25);
+  transition: transform .3s ease;
+}
+.navbar-brand:hover .brand-logo { transform: scale(1.08) rotate(-3deg); }
+
+/* ---------- Shared site footer (all pages) ---------- */
+.site-footer { background: #004d00 !important; color: #fff; text-align: left !important; padding: 3rem 0 1.5rem; }
+.site-footer h5 { font-weight: 700; margin-bottom: 1rem; color: #fff; }
+.site-footer a { color: #fff; text-decoration: none; }
+.site-footer a:hover { color: var(--safari-gold); text-decoration: none; }
+.site-footer .footer-logo { width: 130px; height: 130px; border-radius: 18px; object-fit: cover; box-shadow: 0 10px 30px rgba(0, 0, 0, .3); }
+.site-footer .footer-tagline { font-family: Georgia, serif; font-style: italic; color: var(--safari-gold); margin: .4rem 0 0; }
+.site-footer .f-links a { display: block; margin-bottom: .55rem; opacity: .85; }
+.site-footer .f-links a:hover { opacity: 1; }
+.site-footer .social a {
+  width: 40px; height: 40px; border-radius: 50%; display: inline-grid; place-items: center;
+  background: rgba(255, 255, 255, .1); margin-right: .4rem; transition: .3s;
+}
+.site-footer .social a:hover { background: var(--safari-gold); color: #1a1a1a; transform: translateY(-3px); }
+.site-footer .contact-line { display: flex; gap: .7rem; margin-bottom: .8rem; opacity: .9; }
+.site-footer .contact-line i { color: var(--safari-gold); margin-top: .3rem; width: 16px; }
+.site-footer hr { border-color: rgba(255, 255, 255, .2); opacity: 1; }
+@media (max-width: 991.98px) { .site-footer .footer-logo { width: 110px; height: 110px; } }
+
+.navbar .navbar-brand, .navbar .navbar-brand.brand-text { color: #fff !important; }
+
+/* =========================================================
+   Fun & functional extras
+   ========================================================= */
+
+/* Scroll progress with a paw at the tip (bottom edge of navbar) */
+.gt-progress { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; pointer-events: none; }
+.gt-progress .bar { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--safari-gold), #ffe08a); box-shadow: 0 0 10px rgba(244, 196, 48, .7); }
+.gt-progress i { position: absolute; top: -6px; font-size: 13px; color: var(--safari-gold); opacity: 0; transition: opacity .3s; filter: drop-shadow(0 0 3px rgba(0, 0, 0, .5)); }
+
+/* Back to top */
+.gt-top {
+  position: fixed; right: 24px; bottom: 92px; z-index: 1049;
+  width: 46px; height: 46px; border-radius: 50%; border: 0;
+  background: var(--safari-gold); color: #1a1a1a; font-size: 1.05rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+  opacity: 0; transform: translateY(20px) scale(.8); pointer-events: none;
+  transition: opacity .3s ease, transform .3s ease, background .2s;
+}
+.gt-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.gt-top:hover { background: var(--safari-gold-dark); transform: translateY(-3px); }
+@media (max-width: 576px) { .gt-top { right: 20px; bottom: 84px; } }
+
+/* Toast notifications */
+.gt-toasts { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 3000; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; width: max-content; max-width: calc(100vw - 32px); }
+.gt-toast {
+  display: flex; align-items: center; gap: .6rem;
+  background: #10261a; color: #fff; border-left: 4px solid var(--safari-gold);
+  padding: .75rem 1.1rem; border-radius: 12px; font-size: .92rem; font-weight: 500;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+  animation: toastIn .35s cubic-bezier(.2, .9, .3, 1.3);
+}
+.gt-toast i { color: var(--safari-gold); }
+.gt-toast.out { opacity: 0; transform: translateY(10px); transition: .4s ease; }
+@keyframes toastIn { from { opacity: 0; transform: translateY(20px) scale(.9); } to { opacity: 1; transform: none; } }
+
+/* Confetti canvas */
+.gt-confetti { position: fixed; inset: 0; z-index: 2999; pointer-events: none; }
+
+/* Tour page actions (Save / Share / Print) */
+.tour-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .15); }
+.tour-actions button {
+  background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .18); color: #fff;
+  border-radius: 12px; padding: .55rem .3rem; font-size: .8rem; font-weight: 600;
+  display: flex; flex-direction: column; align-items: center; gap: .25rem; transition: .2s;
+}
+.tour-actions button i { font-size: 1.05rem; color: var(--safari-gold); }
+.tour-actions button:hover { background: rgba(255, 255, 255, .16); transform: translateY(-2px); }
+.tour-actions button.on { background: var(--safari-gold); color: #1a1a1a; }
+.tour-actions button.on i { color: #b02a37; animation: heartPop .4s ease; }
+@keyframes heartPop { 50% { transform: scale(1.4); } }
+
+/* Print: clean itinerary */
+@media print {
+  .navbar, footer, .horizon, .fab-whatsapp, .gt-top, .gt-toasts, .tour-actions, .book-card .btn,
+  .nav-pills, .carousel, .cta-band, .animal-gallery { display: none !important; }
+  .tab-content > .tab-pane { display: block !important; opacity: 1 !important; }
+  .tour-hero, .page-hero { min-height: 0 !important; height: auto !important; padding: 20px 0 !important; color: #000 !important; background: none !important; }
+  .tour-hero::after, .page-hero::before { display: none !important; }
+  .tour-hero .content, .tour-hero h1 { color: #000 !important; }
+  .sticky-sidebar { position: static !important; }
+  .book-card { background: #fff !important; color: #000 !important; border: 1px solid #ccc; box-shadow: none !important; }
+  body::before { content: "Gratius Tours and Travel · gratiustoursandtravel@gmail.com · +256 742 015425"; display: block; font-weight: 700; margin-bottom: 10px; }
+  a[href]::after { content: none !important; }
+}

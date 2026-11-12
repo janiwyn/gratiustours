@@ -2,475 +2,166 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pearl Quest Safaris Tours And Travel</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Photo Album | Gratius Tours and Travel</title>
+  <meta name="description"
+    content="Uganda in pictures: gorillas, chimpanzees, big game, waterfalls, culture and lodges from Gratius Tours trips.">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-  <style>
-     :root {
-      --safari-blue: #003366;
-      --safari-gold: #f4c430;
-      --safari-green: #004d00;
-    }
-
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #f8f9fa;
-      padding-top: 80px;
-    }
-
-    .navbar {
-      background-color: grey !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .nav-link {
-      color: white !important;
-      font-weight: 500;
-    }
-
-    .nav-link:hover {
-      color: #ffc107 !important;
-    }
-
-    .navbar.scrolled {
-      background: rgba(0, 0, 0, 0.95);
-    }
-
-    .photo-hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url("https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1500&q=80") center/cover no-repeat;
-      height: 70vh;
-      color: white;
-    }
-
-    .divider {
-      width: 80px;
-      height: 4px;
-      background: #198754;
-      margin: 20px auto;
-      border-radius: 2px;
-    }
-
-    /* Gallery */
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      height: 250px;
-    }
-
-    .gallery-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-
-    /* Zoom Icon */
-    .gallery-item::after {
-      content: "\f00e";
-      font-family: "Font Awesome 6 Free";
-      font-weight: 900;
-      color: white;
-      font-size: 1.5rem;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(0);
-      opacity: 0;
-      transition: 0.3s ease;
-    }
-
-    .gallery-item:hover::after {
-      transform: translate(-50%, -50%) scale(1);
-      opacity: 1;
-    }
-
-    .modal-content {
-      border-radius: 12px;
-      background: #1c1c1c;
-      color: #ddd;
-    }
-
-    .modal-img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    /* footer {
-      background-color: #004d00;
-      color: white;
-      padding: 25px 0;
-      text-align: center;
-    }
-
-    footer a {
-      color: yellow;
-      text-decoration: none;
-    } */
-  /* ===== FOOTER ===== */
-    footer {
-      background: var(--safari-green);
-      color: white;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      text-align: left;
-    }
-
-    .newsletter-input {
-      border-radius: 30px;
-      border: none;
-      padding: 10px 15px;
-    }
-
-    .social-icons a {
-      color: white;
-      font-size: 22px;
-      margin-right: 12px;
-      transition: .3s;
-    }
-
-    .social-icons a:hover {
-      color: var(--safari-gold);
-      transform: translateY(-3px);
-    }
-
-    .quick-links a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 6px;
-    }
-
-    .quick-links a:hover {
-      color: var(--safari-gold);
-    }
-
-    @media(max-width: 768px) {
-      .footer-grid {
-        text-align: center;
-      }
-    }
-
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #198754;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    #backToTop:hover {
-      background: #157347;
-    }
-
-    .creator {
-      font-size: 14px;
-      color: #ffc107;
-      margin-top: 5px;
-      font-style: italic;
-    }
-
-    .brand-text {
-      color: rgb(8, 19, 8) !important;
-    }
-
-    .brand-text {
-      max-width: 100%;
-    }
-
-    .brand-name {
-      font-size: 1.2rem;
-      line-height: 1.2;
-      white-space: nowrap;
-    }
-
-    /* Tablets */
-    @media (max-width: 768px) {
-      .brand-name {
-        font-size: 1rem;
-      }
-    }
-
-    /* Small phones */
-    @media (max-width: 576px) {
-      .brand-name {
-        font-size: 0.9rem;
-        white-space: normal;
-        /* Allows wrapping */
-      }
-    }
-  </style>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 
-<body>
+<body class="home">
 
-  <!-- NAVBAR -->
+  <!-- 🌐 Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center brand-text" href="index.html">
-        <img src="images/deo1.jpeg" alt="Pearl Quest Safaris Logo" width="45" height="45" class="me-2 rounded-circle">
-        <span class="brand-name">Pearl Quest Safaris Tours & Travel</span>
+        <span class="brand-logo me-2" role="img" aria-label="Gratius Tours and Travel logo"></span>
+        <span class="brand-name">Gratius Tours & Travel</span>
       </a>
-
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="tours.html">Tours & Packages</a></li>
-          <li class="nav-item"><a class="nav-link active" href="photo_album.html">Photo Album</a></li>
+          <li class="nav-item"><a class="nav-link" href="photo_album.html">Photo Album</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2 d-flex align-items-center"><a class="btn btn-book" href="booking.html"><i
+                class="fa-solid fa-calendar-check me-1"></i> Book Now</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="photo-hero d-flex align-items-center justify-content-center text-center">
-    <div class="bg-dark bg-opacity-50 p-5 rounded animate__animated animate__fadeInDown">
-      <h1 class="display-4 fw-bold text-warning">Uganda in Pictures</h1>
-      <p class="lead">A beautiful collection of moments from the Pearl of Africa.</p>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="py-5 bg-light">
+  <!-- ===================== HERO ===================== -->
+  <header class="page-hero" style="--edge:#f6f8f4">
+    <img src="images/Queen_Elizabeth_National_Park_046.jpg" alt="" style="object-position:center 40%">
     <div class="container">
-      <h2 class="text-center fw-bold text-success">Our Gallery</h2>
-      <div class="divider"></div>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><i
+          class="fa-solid fa-chevron-right"></i><span>Photo Album</span></nav>
+      <h1 data-aos="fade-up">Uganda<br><span class="gold">in Pictures</span></h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">Gorillas in the mist, lions in the grass, thundering
+        waterfalls and joyful dancers. Moments from the Pearl of Africa, captured on our safaris.</p>
+      <div class="hero-chips" data-aos="fade-up" data-aos-delay="200">
+        <span><i class="fa-solid fa-camera"></i><b id="photoTotal">100+</b>&nbsp;photos</span>
+        <span><i class="fa-solid fa-hand-pointer"></i>Tap any photo to enlarge</span>
+      </div>
+    </div>
+    <svg class="edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60 L0 30 Q 360 0 720 28 T 1440 22 L1440 60 Z" />
+    </svg>
+  </header>
 
-      <div class="row g-4" id="galleryContainer">
+  <!-- ===================== GALLERY ===================== -->
+  <section class="parks sec-pad pt-5">
+    <div class="container">
+      <div class="album-filters" id="albumFilters" role="group" aria-label="Filter photos"></div>
+      <div class="album-tools">
+        <button type="button" id="albumShuffle"><i class="fa-solid fa-shuffle me-1"></i>Shuffle</button>
+        <button type="button" id="albumShow"><i class="fa-solid fa-circle-play me-1"></i>Play slideshow</button>
+      </div>
+      <div class="masonry" id="albumGrid"></div>
+    </div>
+  </section>
 
-        <!-- PHOTO ONLY — NO TEXT -->
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/gorillas.jpeg">
-          <img src="images/gorillas.jpeg" />
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/rwenzori.jpg">
-          <img src="images/rwenzori.jpg" />
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/Murchison Falls,.jpg">
-          <img src="images/Murchison Falls,.jpg" />
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/culture.jpg">
-          <img src="images/culture.jpg" />
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/Kampala City.jpg">
-          <img src="images/Kampala City.jpg" />
-        </div>
-
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/Night view of the nile bridge in jinja.jpg">
-          <img src="images/Night view of the nile bridge in jinja.jpg" />
-        </div>
-
-        <!-- <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/Bujagali.jpg">
-          <img src="images/Bujagali.jpg" />
-        </div> -->
-
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic1.jpeg">
-          <img src="images/pic1.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic2.jpeg">
-          <img src="images/pic2.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic3.jpeg">
-          <img src="images/pic3.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic4.jpeg">
-          <img src="images/pic4.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic5.jpeg">
-          <img src="images/pic5.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic6.jpeg">
-          <img src="images/pic6.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic7.jpeg">
-          <img src="images/pic7.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic8.jpeg">
-          <img src="images/pic8.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic9.jpeg">
-          <img src="images/pic9.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic10.jpeg">
-          <img src="images/pic10.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic12.jpeg">
-          <img src="images/pic12.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic13.jpeg">
-          <img src="images/pic13.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic14.jpeg">
-          <img src="images/pic14.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic15.jpeg">
-          <img src="images/pic15.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic16.jpeg">
-          <img src="images/pic16.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic17.jpeg">
-          <img src="images/pic17.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic18.jpeg">
-          <img src="images/pic18.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic19.jpeg">
-          <img src="images/pic19.jpeg" />
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3 gallery-item" data-bs-toggle="modal" data-bs-target="#photoModal"
-          data-image="images/pic20.jpeg">
-          <img src="images/pic20.jpeg" />
-        </div>
-
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-band text-center">
+    <div class="container position-relative" data-aos="zoom-in">
+      <h2 class="display-6 mb-3">See It With Your Own Eyes</h2>
+      <p class="lead">Photos are wonderful, but nothing compares to being there. Let us plan your journey to these
+        unforgettable places.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="booking.html" class="btn btn-warning btn-lg"><i class="fa-solid fa-calendar-check me-1"></i> Plan My
+          Safari</a>
+        <a href="tours.html" class="btn btn-ghost btn-lg">Browse Tours</a>
       </div>
     </div>
   </section>
 
-  <!-- MODAL -->
-  <div class="modal fade" id="photoModal" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body text-center">
-          <img id="modalImage" class="modal-img" />
-        </div>
-      </div>
+  <!-- ===================== LIGHTBOX ===================== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lb-btn lb-play" id="lbPlay" aria-label="Play slideshow"><i class="fa-solid fa-play"></i></button>
+    <div class="lb-timer"><span id="lbTimer"></span></div>
+    <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><i
+        class="fa-solid fa-chevron-left"></i></button>
+    <img id="lbImg" src="" alt="">
+    <div class="lb-cap">
+      <small id="lbCat"></small>
+      <div id="lbTitle"></div>
+      <div class="lb-count" id="lbCount"></div>
     </div>
+    <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><i
+        class="fa-solid fa-chevron-right"></i></button>
   </div>
-  <!-- ===== FOOTER ===== -->
-  <footer class="py-5">
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer pt-5 pb-4">
     <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div>
-          <h5 class="fw-bold">Pearl Quest Safaris</h5>
-          <p>
-            Your trusted partner in exploring Uganda’s wildlife,
-            culture and unforgettable adventures.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="quick-links">
-          <h5>Quick Links</h5>
-          <a href="index.html">Home</a>
-          <a href="tours.html">Tours & Packages</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Social & Contact -->
-        <div>
-          <h5>Connect With Us</h5>
-
-          <div class="social-icons mb-3">
-            <a href="https://www.facebook.com/share/14Tp9AVRorJ/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/deangratius"><i class="fab fa-instagram"></i></a>
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="images/gratius-logo.png" alt="Gratius Tours and Travel" class="footer-logo mb-3" width="130" height="130" loading="lazy">
+          <p class="opacity-75 mb-1">Your trusted partner in exploring Uganda's wildlife, culture and unforgettable
+            adventures. Private, tailor-made safaris planned by local experts.</p>
+          <p class="footer-tagline">Explore Africa. Discover More.</p>
+          <div class="social mt-3">
+            <a href="https://www.facebook.com/share/14Tp9AVRorJ/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/deangratius" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/gratiustours" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/256742015425" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
           </div>
-
-          <small>Designed with ❤️ in Uganda</small><br>
-          <small class="text-warning">Created by Jane</small>
         </div>
-
+        <div class="col-6 col-lg-2 f-links">
+          <h5>Explore</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="tours.html">Tours &amp; Packages</a>
+          <a href="photo_album.html">Photo Album</a>
+          <a href="contact.html">Contact</a>
+          <a href="booking.html">Book a Safari</a>
+        </div>
+        <div class="col-6 col-lg-3 f-links">
+          <h5>Top Tours</h5>
+          <a href="gorilla.html">Gorilla Tracking</a>
+          <a href="tour8.html">Chimpanzee Tracking</a>
+          <a href="elizabeth.html">Queen Elizabeth Safari</a>
+          <a href="tour5.html">Murchison Falls</a>
+          <a href="tour9.html">Kidepo Valley</a>
+        </div>
+        <div class="col-lg-3">
+          <h5>Get in Touch</h5>
+          <div class="contact-line"><i class="fa-solid fa-location-dot"></i><span>Kampala, Uganda</span></div>
+          <div class="contact-line"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/256742015425" target="_blank" rel="noopener">+256 742 015425</a></div>
+          <div class="contact-line"><i class="fa-solid fa-envelope"></i><a href="mailto:gratiustoursandtravel@gmail.com">gratiustoursandtravel@gmail.com</a></div>
+          <div class="contact-line"><i class="fa-brands fa-x-twitter"></i><a href="https://x.com/gratiustours" target="_blank" rel="noopener">@gratiustours</a></div>
+        </div>
       </div>
-
       <hr class="my-4">
-      <p class="text-center mb-0">
-        © 2026 Pearl Quest Safaris Tours And Travel
-      </p>
-
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+        <span>© 2026 Gratius Tours and Travel. All rights reserved.</span>
+        <span>Designed with ❤️ in Uganda · Created by <span class="text-warning fw-semibold">Syrix Technologies</span></span>
+      </div>
     </div>
   </footer>
 
-  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    const photoModal = document.getElementById("photoModal");
-    photoModal.addEventListener("show.bs.modal", function (event) {
-      const trigger = event.relatedTarget;
-      document.getElementById("modalImage").src = trigger.getAttribute("data-image");
-    });
-
-    // Navbar scroll effect
-    window.addEventListener("scroll", () => {
-      const navbar = document.querySelector(".navbar");
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    });
-
-    // Back to top
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      backToTop.style.display = window.scrollY > 300 ? "flex" : "none";
-    });
-    backToTop.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
-  </script>
-
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/album.js"></script>
 </body>
 
 </html>

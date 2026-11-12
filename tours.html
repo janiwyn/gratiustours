@@ -4,251 +4,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pearl Quest Safaris | Tours & Packages</title>
+  <title>Tours &amp; Packages | Gratius Tours</title>
+  <meta name="description"
+    content="Private Uganda safari packages: gorilla trekking, chimpanzee tracking, Queen Elizabeth, Murchison Falls and Kidepo Valley tours.">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <style>
-     :root {
-      --safari-blue: #003366;
-      --safari-gold: #f4c430;
-      --safari-green: #004d00;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* Navbar */
-    .navbar {
-      background-color: grey !important;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .navbar.scrolled {
-      background: rgba(0, 0, 0, 0.95);
-    }
-
-    .nav-link {
-      color: white !important;
-      font-weight: 500;
-    }
-
-    .nav-link:hover {
-      color: #ffc107 !important;
-    }
-
-    /* Hero Section */
-    .tours-hero {
-      background: url(images/elephants.jpeg) center/cover no-repeat;
-      height: 80vh;
-      position: relative;
-    }
-
-    .brand-text {
-      color: rgb(8, 19, 8) !important;
-    }
-
-    .tours-hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .tours-hero .content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      animation: bounce 2s infinite;
-      color: white;
-      font-size: 2rem;
-      z-index: 3;
-    }
-
-    @keyframes bounce {
-
-      0%,
-      20%,
-      50%,
-      80%,
-      100% {
-        transform: translate(-50%, 0);
-      }
-
-      40% {
-        transform: translate(-50%, -10px);
-      }
-
-      60% {
-        transform: translate(-50%, -5px);
-      }
-    }
-
-    .tour-card {
-      border: none;
-      border-radius: 15px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .tour-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Like Icon */
-    .like-icon {
-      background: #fff;
-      border-radius: 50%;
-      padding: 8px 10px;
-      cursor: pointer;
-      z-index: 10;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    .like-icon i {
-      font-size: 1.2rem;
-      color: #888;
-    }
-
-    .like-icon.liked i {
-      color: #dc3545;
-    }
-
-
-    .btn-warning {
-      border-radius: 25px;
-      padding: 8px 20px;
-      font-weight: 600;
-    }
-
-    .modal-img {
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    /* Footer */
-    /* footer {
-      background-color: #004d00;
-      color: white;
-      padding: 25px 0;
-      text-align: center;
-    }
-
-    footer a {
-      color: yellow;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    .creator {
-      font-size: 14px;
-      color: #ffc107;
-      margin-top: 5px;
-      font-style: italic;
-    }
-
-    .brand-text {
-      max-width: 100%;
-    }
-
-    .brand-name {
-      font-size: 1.2rem;
-      line-height: 1.2;
-      white-space: nowrap;
-    } */
-  /* ===== FOOTER ===== */
-    footer {
-      background: var(--safari-green);
-      color: white;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      text-align: left;
-    }
-
-    .newsletter-input {
-      border-radius: 30px;
-      border: none;
-      padding: 10px 15px;
-    }
-
-    .social-icons a {
-      color: white;
-      font-size: 22px;
-      margin-right: 12px;
-      transition: .3s;
-    }
-
-    .social-icons a:hover {
-      color: var(--safari-gold);
-      transform: translateY(-3px);
-    }
-
-    .quick-links a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 6px;
-    }
-
-    .quick-links a:hover {
-      color: var(--safari-gold);
-    }
-
-    @media(max-width: 768px) {
-      .footer-grid {
-        text-align: center;
-      }
-    }
-
-    /* Tablets */
-    @media (max-width: 768px) {
-      .brand-name {
-        font-size: 1rem;
-      }
-    }
-
-    /* Small phones */
-    @media (max-width: 576px) {
-      .brand-name {
-        font-size: 0.9rem;
-        white-space: normal;
-        /* Allows wrapping */
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 
-<body>
+<body class="home">
 
   <!-- 🌐 Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center brand-text" href="index.html">
-        <img src="images/deo1.jpeg" alt="Pearl Quest Safaris Logo" width="45" height="45" class="me-2 rounded-circle">
-        <span class="brand-name">Pearl Quest Safaris Tours & Travel</span>
+        <span class="brand-logo me-2" role="img" aria-label="Gratius Tours and Travel logo"></span>
+        <span class="brand-name">Gratius Tours & Travel</span>
       </a>
-
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -256,541 +37,232 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="tours.html">Tours & Packages</a></li>
-          <li class="nav-item"><a class="nav-link active" href="photo_album.html">Photo Album</a></li>
+          <li class="nav-item"><a class="nav-link" href="photo_album.html">Photo Album</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2 d-flex align-items-center"><a class="btn btn-book" href="booking.html"><i
+                class="fa-solid fa-calendar-check me-1"></i> Book Now</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="tours-hero d-flex align-items-center justify-content-center text-center text-white">
-    <div class="content">
-      <h1 class="display-4 fw-bold">Explore Uganda with Us</h1>
-      <p class="lead">Discover breathtaking landscapes, unique wildlife, and unforgettable adventures.</p>
+  <!-- ===================== HERO ===================== -->
+  <header class="page-hero" style="--edge:#f6f8f4">
+    <img src="images/elephants.jpeg" alt="">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><i
+          class="fa-solid fa-chevron-right"></i><span>Tours &amp; Packages</span></nav>
+      <h1 data-aos="fade-up">Find Your Perfect<br><span class="gold">Uganda Safari</span></h1>
+      <p class="lead" data-aos="fade-up" data-aos-delay="100">From a quick 2-day getaway to a week-long adventure
+        with gorillas, chimps and big game. Every tour is private and can be tailored to you.</p>
+      <div class="hero-chips" data-aos="fade-up" data-aos-delay="200">
+        <span><i class="fa-solid fa-suitcase-rolling"></i>11 ready-made tours</span>
+        <span><i class="fa-solid fa-calendar-days"></i>2 to 7 days</span>
+        <span><i class="fa-solid fa-plane-arrival"></i>Entebbe pickup included</span>
+      </div>
     </div>
-    <a href="#tours-section" class="scroll-down"><i class="bi bi-arrow-down-circle"></i></a>
+    <svg class="edge" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 60 L0 30 Q 360 0 720 28 T 1440 22 L1440 60 Z" />
+    </svg>
+  </header>
+
+  <!-- ===================== TOURS ===================== -->
+  <section class="parks pb-5 pt-0" id="tours-section">
+    <div class="container">
+
+      <div class="tour-toolbar">
+        <label class="search" for="tourSearch">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input id="tourSearch" type="search" placeholder="Search a park, animal or activity…"
+            aria-label="Search tours">
+        </label>
+        <div class="t-chips" role="group" aria-label="Filter tours">
+          <button class="active" data-f="all">All tours</button>
+          <button data-f="primates"><i class="fa-solid fa-tree me-1"></i>Gorillas &amp; Chimps</button>
+          <button data-f="wildlife"><i class="fa-solid fa-paw me-1"></i>Wildlife Safaris</button>
+          <button data-f="short"><i class="fa-solid fa-bolt me-1"></i>2–3 days</button>
+          <button data-f="long"><i class="fa-solid fa-mountain-sun me-1"></i>4+ days</button>
+          <button data-f="saved"><i class="fa-solid fa-heart me-1"></i>Saved <b class="saved-n" id="savedCount">0</b></button>
+        </div>
+        <label class="t-sort"><i class="fa-solid fa-arrow-down-short-wide"></i>
+          <select id="tourSort" aria-label="Sort tours">
+            <option value="rec">Recommended</option>
+            <option value="short">Shortest first</option>
+            <option value="long">Longest first</option>
+            <option value="az">A–Z</option>
+          </select>
+        </label>
+        <span class="t-count" id="tourCount" aria-live="polite"></span>
+      </div>
+
+      <div class="row g-4" id="tourGrid"></div>
+      <div class="no-results" id="noResults">
+        <i class="fa-solid fa-binoculars d-block"></i>
+        <h5 class="fw-bold text-dark">No tours match your search</h5>
+        <p>Try another word, or let us build a custom safari for you.</p>
+        <a href="booking.html?tour=Custom%20safari%20(help%20me%20plan)" class="btn btn-warning">Plan a Custom
+          Safari</a>
+      </div>
+    </div>
   </section>
 
-  <!-- Tours Section -->
-  <section class="py-5 bg-light" id="tours-section">
+  <!-- ===================== CHOOSE BY INTEREST ===================== -->
+  <section class="sec-pad">
     <div class="container">
-      <h2 class="text-center fw-bold text-success mb-5" data-aos="fade-down">Our Top Travel Packages</h2>
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Not sure where to start?</div>
+        <h2 style="color:#004d00">Which Safari Is Right for You?</h2>
+        <p>Pick what matters most and we'll show you the best matches.</p>
+      </div>
       <div class="row g-4">
-        <!-- Tour Card -->
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="gorilla.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/gorillas.jpeg" alt="Bwindi Gorilla Trekking" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 3 Gorilla Trekking Adventure</h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 3 Days ·
-                  <i class="bi bi-geo-alt"></i> Bwindi NP
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Entebbe • Bwindi Impenetrable Forest • Lake Bunyonyi
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $1700 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up">
+          <a href="#tours-section" class="pick-card" data-pick="primates">
+            <div class="emoji"><i class="fa-solid fa-heart"></i></div>
+            <h6>"I must see gorillas"</h6>
+            <p>Gorilla trekking in Bwindi and chimp tracking in Kibale, the ultimate bucket-list experiences.</p>
+            <span>Show primate tours →</span>
           </a>
         </div>
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="elizabeth.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/wildlife.jpg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 3 Wildlife Safari Experience</h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 3 Days ·
-                  <i class="bi bi-geo-alt"></i> Queen Elizabeth NP
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Entebbe • Queen Elizabeth • Kazinga Channel
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $990 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+          <a href="#tours-section" class="pick-card" data-pick="wildlife">
+            <div class="emoji"><i class="fa-solid fa-paw"></i></div>
+            <h6>"My first African safari"</h6>
+            <p>Lions, elephants, hippos and buffalo on classic game drives and boat cruises.</p>
+            <span>Show wildlife safaris →</span>
           </a>
         </div>
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="elizabeth2.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/Queen_Elizabeth_National_Park_043.jpg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 2 Queen Elizabeth National Park</h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 2 Days ·
-                  <i class="bi bi-geo-alt"></i> Queen Elizabeth NP
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Queen Elizabeth • Game drive - Transfer to Kampala
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $660 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+          <a href="#tours-section" class="pick-card" data-pick="short">
+            <div class="emoji"><i class="fa-solid fa-stopwatch"></i></div>
+            <h6>"I'm short on time"</h6>
+            <p>Packed 2–3 day trips that fit around business travel or a quick getaway.</p>
+            <span>Show short trips →</span>
           </a>
         </div>
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour3.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/pic10.jpeg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 4 Queen Elizabeth National Park & Gorilla Tracking
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 4 Days ·
-                  <i class="bi bi-geo-alt"></i> Queen Elizabeth NP & Bwindi Impenetrable NP
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Bwindi Impenetrable • Queen Elizabeth - Transfer to Entebbe
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $1800 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
+        <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+          <a href="#tours-section" class="pick-card" data-pick="long">
+            <div class="emoji"><i class="fa-solid fa-earth-africa"></i></div>
+            <h6>"I want to see it all"</h6>
+            <p>Longer journeys combining primates, savannah, waterfalls and culture.</p>
+            <span>Show longer tours →</span>
           </a>
         </div>
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour4.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/Bwindi_Impenetrable_National_Park_007.jpg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 7 Gorilla, Chimps and Wildlife Tour
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 7 Days ·
-                  <i class="bi bi-geo-alt"></i> Gorilla, Chimps and Wildlife Tour In Uganda
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Bwindi Impenetrable • Queen Elizabeth - Transfer to Entebbe
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $2998 <span class="small text-muted">/ @person</span>
-                </div>
-              </div>
-            </div>
-
-          </a>
-        </div>
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour5.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/Murchison Falls,.jpg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 3 Murchison Fall National Park
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 3 Days ·
-                  <i class="bi bi-geo-alt"></i> Murchison Falls National Park
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Murchison Falls - Transfer to Entebbe
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $990<span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
-          </a>
-        </div>
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour6.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/r2.png" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 2 Murchison Fall National Park and Wildlife Game Viewing
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 2 Days ·
-                  <i class="bi bi-geo-alt"></i> Murchison Falls National Park and Wildlife Game Viewing
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Murchison Falls - Transfer to Entebbe
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $660<span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
-          </a>
-        </div>
-
-
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour7.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/elephants.jpeg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 6 days Uganda Ultimate Wildlife Safari Experience
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 6 Days ·
-                  <i class="bi bi-geo-alt"></i> Wildlife Safari Experience
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Murchison Falls - Queen Elizabeth - Lake Mburo.
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $1980 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
-          </a>
-        </div>
-
-
-
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour8.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/kibale4.png" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 3 days Kibale Chimpanzee Tracking Safari
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 3 Days ·
-                  <i class="bi bi-geo-alt"></i> Kibale Chimpanzee Tracking
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Kibale National Park
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $754 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
-          </a>
-        </div>
-
-
-
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour9.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/kidepo.jpg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 3 days Kidepo Valley National Park
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 3 Days ·
-                  <i class="bi bi-geo-alt"></i> Kidepo Valley NP
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Kidepo National Park
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $1540 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
-          </a>
-        </div>
-
-
-
-        
-        <div class="col-md-4" data-aos="zoom-in">
-          <a href="tour10.html" class="text-decoration-none text-dark">
-
-            <div class="card tour-card shadow-lg position-relative h-100">
-
-              <!-- Like Icon -->
-              <span class="like-icon position-absolute top-0 end-0 m-3">
-                <i class="bi bi-heart"></i>
-              </span>
-
-              <!-- Image -->
-              <img src="images/kidepo.jpg" alt="Wildlife Safari" class="card-img-top">
-              <!-- Title -->
-              <h5 class="fw-bold mt-2 mb-2 px-3"> 5 days Kidepo and Cultural Experience
-              </h5>
-
-              <!-- Card Body -->
-              <div class="card-body">
-
-                <!-- Duration & Park -->
-                <div class="small text-muted mb-1">
-                  <i class="bi bi-calendar3"></i> 5 Days ·
-                  <i class="bi bi-geo-alt"></i> Kidepo Valley NP
-                </div>
-                <!-- Places -->
-                <p class="small mb-2 text-muted">
-                  Kidepo National Park and Cultural
-                </p>
-
-                <!-- Price -->
-                <div class="fw-bold text-success fs-5">
-                  $1815 <span class="small text-muted">/ @person</span>
-                </div>
-
-              </div>
-            </div>
-
-          </a>
-        </div>
-
-
-
-
-
-
       </div>
     </div>
   </section>
 
-
-
-
-
-   <!-- ===== FOOTER ===== -->
-  <footer class="py-5">
+  <!-- ===================== INCLUDED ===================== -->
+  <section class="sec-pad parks">
     <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div>
-          <h5 class="fw-bold">Pearl Quest Safaris</h5>
-          <p>
-            Your trusted partner in exploring Uganda’s wildlife,
-            culture and unforgettable adventures.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="quick-links">
-          <h5>Quick Links</h5>
-          <a href="index.html">Home</a>
-          <a href="tours.html">Tours & Packages</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Social & Contact -->
-        <div>
-          <h5>Connect With Us</h5>
-
-          <div class="social-icons mb-3">
-            <a href="https://www.facebook.com/share/14Tp9AVRorJ/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/deangratius"><i class="fab fa-instagram"></i></a>
-          </div>
-
-          <small>Designed with ❤️ in Uganda</small><br>
-          <small class="text-warning">Created by Jane</small>
-        </div>
-
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Good to know</div>
+        <h2 style="color:#004d00">What's Usually Included</h2>
+        <p>Each tour page lists its exact details. Here's what most of our packages cover.</p>
       </div>
+      <div class="row g-4">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="incl yes">
+            <h5><i class="fa-solid fa-circle-check me-2"></i>Included</h5>
+            <ul>
+              <li><i class="fa-solid fa-check"></i>Airport pickup and drop-off at Entebbe</li>
+              <li><i class="fa-solid fa-check"></i>Private 4x4 safari vehicle with fuel</li>
+              <li><i class="fa-solid fa-check"></i>English-speaking driver-guide</li>
+              <li><i class="fa-solid fa-check"></i>Park entry fees (for non-residents)</li>
+              <li><i class="fa-solid fa-check"></i>Gorilla or chimp permits on primate tours</li>
+              <li><i class="fa-solid fa-check"></i>Accommodation and meals as listed</li>
+              <li><i class="fa-solid fa-check"></i>Activities in the itinerary (game drives, boat cruises)</li>
+              <li><i class="fa-solid fa-check"></i>Drinking water in the vehicle</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="incl no">
+            <h5><i class="fa-solid fa-circle-xmark me-2"></i>Not included</h5>
+            <ul>
+              <li><i class="fa-solid fa-xmark"></i>International flights</li>
+              <li><i class="fa-solid fa-xmark"></i>Visa fees and travel insurance</li>
+              <li><i class="fa-solid fa-xmark"></i>Tips for guides and porters</li>
+              <li><i class="fa-solid fa-xmark"></i>Optional activities not in the itinerary</li>
+              <li><i class="fa-solid fa-xmark"></i>Drinks and personal items (souvenirs, laundry)</li>
+              <li><i class="fa-solid fa-xmark"></i>Government increases in taxes or park fees</li>
+            </ul>
+            <div class="alert alert-warning mt-4 mb-0 small"><i class="fa-solid fa-lightbulb me-1"></i> Want
+              something changed? Every package can be adjusted. Just tell us in your booking request.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-band text-center">
+    <div class="container position-relative" data-aos="zoom-in">
+      <h2 class="display-6 mb-3">Can't Find the Perfect Trip?</h2>
+      <p class="lead">Mix and match parks, activities and lodges. Tell us what you'd love to see and we'll design a
+        safari just for you, with a free quote.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="booking.html?tour=Custom%20safari%20(help%20me%20plan)" class="btn btn-warning btn-lg"><i
+            class="fa-solid fa-pen-ruler me-1"></i> Request a Custom Safari</a>
+        <a href="https://wa.me/256742015425" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><i
+            class="fa-brands fa-whatsapp me-1"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="images/gratius-logo.png" alt="Gratius Tours and Travel" class="footer-logo mb-3" width="130" height="130" loading="lazy">
+          <p class="opacity-75 mb-1">Your trusted partner in exploring Uganda's wildlife, culture and unforgettable
+            adventures. Private, tailor-made safaris planned by local experts.</p>
+          <p class="footer-tagline">Explore Africa. Discover More.</p>
+          <div class="social mt-3">
+            <a href="https://www.facebook.com/share/14Tp9AVRorJ/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/deangratius" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/gratiustours" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/256742015425" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 f-links">
+          <h5>Explore</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="tours.html">Tours &amp; Packages</a>
+          <a href="photo_album.html">Photo Album</a>
+          <a href="contact.html">Contact</a>
+          <a href="booking.html">Book a Safari</a>
+        </div>
+        <div class="col-6 col-lg-3 f-links">
+          <h5>Top Tours</h5>
+          <a href="gorilla.html">Gorilla Tracking</a>
+          <a href="tour8.html">Chimpanzee Tracking</a>
+          <a href="elizabeth.html">Queen Elizabeth Safari</a>
+          <a href="tour5.html">Murchison Falls</a>
+          <a href="tour9.html">Kidepo Valley</a>
+        </div>
+        <div class="col-lg-3">
+          <h5>Get in Touch</h5>
+          <div class="contact-line"><i class="fa-solid fa-location-dot"></i><span>Kampala, Uganda</span></div>
+          <div class="contact-line"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/256742015425" target="_blank" rel="noopener">+256 742 015425</a></div>
+          <div class="contact-line"><i class="fa-solid fa-envelope"></i><a href="mailto:gratiustoursandtravel@gmail.com">gratiustoursandtravel@gmail.com</a></div>
+          <div class="contact-line"><i class="fa-brands fa-x-twitter"></i><a href="https://x.com/gratiustours" target="_blank" rel="noopener">@gratiustours</a></div>
+        </div>
+      </div>
       <hr class="my-4">
-      <p class="text-center mb-0">
-        © 2026 Pearl Quest Safaris Tours And Travel
-      </p>
-
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+        <span>© 2026 Gratius Tours and Travel. All rights reserved.</span>
+        <span>Designed with ❤️ in Uganda · Created by <span class="text-warning fw-semibold">Syrix Technologies</span></span>
+      </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-    document.querySelectorAll('.like-icon').forEach(icon => {
-      icon.addEventListener('click', function (e) {
-        e.preventDefault();   // prevent card navigation
-        e.stopPropagation();  // stop link click
-        this.classList.toggle('liked');
-        this.querySelector('i').classList.toggle('bi-heart');
-        this.querySelector('i').classList.toggle('bi-heart-fill');
-      });
-    });
-
-
-  </script>
+  <script src="js/site.js"></script>
+  <script src="js/pages.js"></script>
+  <script src="js/tours.js"></script>
 </body>
 
 </html>

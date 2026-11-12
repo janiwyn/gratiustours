@@ -4,173 +4,656 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pearl Quest Safaris Tours And Travel</title>
+  <title>Book Your Safari | Gratius Tours and Travel</title>
+  <meta name="description" content="Request a private Uganda safari with Gratius Tours. Free, no-obligation quote.">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    /* Body */
+    :root {
+      --safari-blue: #003366;
+      --safari-gold: #f4c430;
+      --safari-green: #004d00;
+    }
+
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #f4f7f6;
     }
-        .brand-text {
+
+    .navbar {
+      background-color: grey !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.95) !important;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: #ffc107 !important;
+    }
+
+    .brand-text {
       color: rgb(8, 19, 8) !important;
     }
 
-    /* Navbar */
-    .navbar {
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    .brand-name {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
-    /* Booking Section */
-    #booking {
-      background: linear-gradient(to right, #e6f2e6, #ffffff);
-      padding: 60px 0;
+    @media (max-width: 576px) {
+      .brand-name {
+        font-size: .9rem;
+        white-space: normal;
+      }
     }
 
-    #booking h2 {
-      color: #004d00;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
+    /* Hero */
+    .booking-hero {
+      background: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .65)),
+        url('images/gorillas.jpeg') center/cover no-repeat;
+      color: #fff;
+      padding: 150px 0 120px;
+      text-align: center;
     }
 
-    #booking form {
-      background: white;
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      max-width: 700px;
+    .booking-hero h1 {
+      font-weight: 800;
+    }
+
+    .booking-hero p {
+      opacity: .9;
+      max-width: 620px;
       margin: 0 auto;
     }
 
-    #booking .form-label {
+    /* Booking layout */
+    #booking {
+      margin-top: -70px;
+      padding-bottom: 70px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .booking-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
+    }
+
+    .booking-card h2 {
+      color: var(--safari-green);
+      font-weight: 700;
+    }
+
+    .form-label {
       font-weight: 600;
-      color: #004d00;
+      color: var(--safari-green);
+      font-size: .92rem;
     }
 
-    #booking .form-control,
-    #booking .form-select {
+    .form-control,
+    .form-select {
       border-radius: 10px;
-      border: 1px solid #004d00;
-      padding: 12px;
-      transition: all 0.3s;
+      border: 1px solid #cfd8cf;
+      padding: 12px 14px;
+      transition: border-color .2s, box-shadow .2s;
     }
 
-    #booking .form-control:focus,
-    #booking .form-select:focus {
-      border-color: #ffbf00;
-      box-shadow: 0 0 10px rgba(255, 191, 0, 0.3);
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--safari-gold);
+      box-shadow: 0 0 0 .2rem rgba(244, 196, 48, .25);
     }
 
-    #booking button {
-      background-color: #ffbf00;
-      color: #004d00;
-      font-weight: bold;
-      padding: 12px 25px;
+    .form-step {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-weight: 700;
+      color: var(--safari-blue);
+      margin: 1.6rem 0 1rem;
+      font-size: 1rem;
+    }
+
+    .form-step:first-of-type {
+      margin-top: 0;
+    }
+
+    .form-step span {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--safari-gold);
+      color: #1a1a1a;
+      display: grid;
+      place-items: center;
+      font-size: .85rem;
+    }
+
+    .level-options {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .6rem;
+    }
+
+    .level-options input {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .level-options label {
+      display: block;
+      text-align: center;
+      border: 1px solid #cfd8cf;
       border-radius: 10px;
-      transition: all 0.3s;
+      padding: .7rem .4rem;
+      cursor: pointer;
+      font-size: .9rem;
+      transition: all .2s;
     }
 
-    #booking button:hover {
-      background-color: #ffc966;
-      transform: scale(1.05);
+    .level-options label i {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--safari-blue);
+      margin-bottom: .2rem;
+    }
+
+    .level-options input:checked+label {
+      border-color: var(--safari-gold);
+      background: rgba(244, 196, 48, .12);
+      box-shadow: 0 0 0 2px var(--safari-gold) inset;
+    }
+
+    .level-options input:focus-visible+label {
+      outline: 3px solid var(--safari-gold);
+      outline-offset: 2px;
+    }
+
+    .btn-whatsapp-send {
+      background: var(--safari-green);
+      color: #fff;
+    }
+
+    .btn-whatsapp-send:hover {
+      background: #003a00;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Side info */
+    .info-card {
+      background: linear-gradient(160deg, var(--safari-blue), #00264d);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, .12);
+      height: 100%;
+    }
+
+    .info-card h4 {
+      font-weight: 700;
+    }
+
+    .info-card .perk {
+      display: flex;
+      gap: .9rem;
+      margin-top: 1.3rem;
+    }
+
+    .info-card .perk i {
+      color: var(--safari-gold);
+      font-size: 1.3rem;
+      width: 26px;
+      margin-top: .2rem;
+    }
+
+    .info-card .perk h6 {
+      margin: 0 0 .15rem;
+      font-weight: 600;
+    }
+
+    .info-card .perk p {
+      margin: 0;
+      font-size: .9rem;
+      opacity: .8;
+      line-height: 1.5;
+    }
+
+    .info-card a {
+      color: var(--safari-gold);
+      text-decoration: none;
+    }
+
+    .success-box {
+      display: none;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    .success-box i {
+      font-size: 3.5rem;
+      color: var(--safari-green);
     }
 
     /* Footer */
     footer {
-      background-color: #004d00;
+      background: var(--safari-green);
       color: white;
-      padding: 25px 0;
-      text-align: center;
     }
 
-    /* Responsive adjustments */
-    @media(max-width: 768px) {
-      #booking form {
-        padding: 30px 20px;
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: left;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 22px;
+      margin-right: 12px;
+      transition: .3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--safari-gold);
+    }
+
+    .quick-links a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin-bottom: 6px;
+    }
+
+    .quick-links a:hover {
+      color: var(--safari-gold);
+    }
+
+    @media (max-width: 768px) {
+      .booking-card {
+        padding: 26px 20px;
       }
 
-      #booking h2 {
-        font-size: 2rem;
+      .footer-grid {
+        text-align: center;
       }
     }
-      .creator {
-      font-size: 14px;
-      color: #ffc107;
-      margin-top: 5px;
-      font-style: italic;
+
+    @media (max-width: 420px) {
+      .level-options {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
+  <link rel="stylesheet" href="css/theme.css">
 </head>
 
 <body>
 
-  <!--  Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <!-- 🌐 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-     <a class="navbar-brand fw-bold d-flex align-items-center brand-text" href="index.html">
-        <img src="images/deo1.jpeg" alt="Pearl Quest Safaris Logo" width="45" height="45" class="me-2 rounded-circle">
-        Pearl Quest Safaris
+      <a class="navbar-brand fw-bold d-flex align-items-center brand-text" href="index.html">
+        <span class="brand-logo me-2" role="img" aria-label="Gratius Tours and Travel logo"></span>
+        <span class="brand-name">Gratius Tours & Travel</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="tours.html">Tours & Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours & Packages</a></li>
           <li class="nav-item"><a class="nav-link" href="photo_album.html">Photo Album</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2 d-flex align-items-center"><a class="btn btn-book" href="booking.html"><i class="fa-solid fa-calendar-check me-1"></i> Book Now</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Booking Section -->
-  <section id="booking" class="py-5">
+  <!-- Hero -->
+  <header class="booking-hero">
     <div class="container">
-      <h2 class="text-center fw-bold">Book Your Adventure</h2>
-      <form>
-        <div class="mb-3">
-          <label for="fullName" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="fullName" placeholder="Your Name" required>
+      <span class="section-eyebrow" style="color:var(--safari-gold)">Free · No obligation</span>
+      <h1 class="display-5">Book Your Uganda Adventure</h1>
+      <p class="lead mt-2">Tell us a little about your trip. We'll reply with a tailored itinerary and a free quote, usually within 24 hours.</p>
+    </div>
+  </header>
+
+  <!-- Booking -->
+  <section id="booking">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Form -->
+        <div class="col-lg-8">
+          <div class="booking-card">
+
+            <form id="bookingForm" novalidate>
+              <h2 class="h4 mb-4">Your Safari Request</h2>
+
+              <div class="form-step"><span>1</span> Choose your tour</div>
+              <div class="row g-3">
+                <div class="col-md-7">
+                  <label for="package" class="form-label">Tour Package</label>
+                  <select class="form-select" id="package" required>
+                    <option value="" selected disabled>Select a package</option>
+                    <optgroup label="Gorilla &amp; Primate Tours">
+                      <option>3-Day Gorilla Tracking &amp; Lake Bunyonyi</option>
+                      <option>4-Day Queen Elizabeth &amp; Bwindi Gorilla Tracking</option>
+                      <option>7-Day Gorilla, Chimps &amp; Wildlife Tour</option>
+                      <option>3-Day Kibale Chimpanzee Tracking</option>
+                    </optgroup>
+                    <optgroup label="Wildlife Safaris">
+                      <option>2-Day Queen Elizabeth Wildlife Safari</option>
+                      <option>3-Day Queen Elizabeth &amp; Kazinga Channel</option>
+                      <option>2-Day Murchison Falls &amp; Wildlife Game Viewing</option>
+                      <option>3-Day Murchison Falls National Park</option>
+                      <option>6-Day Ultimate Wildlife Safari Experience</option>
+                      <option>3-Day Kidepo Valley National Park</option>
+                      <option>5-Day Kidepo Valley &amp; Cultural Experience</option>
+                    </optgroup>
+                    <optgroup label="Other">
+                      <option>Custom safari (help me plan)</option>
+                    </optgroup>
+                  </select>
+                  <div class="invalid-feedback">Please choose a package.</div>
+                </div>
+                <div class="col-md-5">
+                  <label for="travelDate" class="form-label">Preferred Start Date</label>
+                  <input type="date" class="form-control" id="travelDate" required>
+                  <div class="invalid-feedback">Please pick a date.</div>
+                </div>
+                <div class="col-12">
+                  <div class="date-info" id="dateInfo" aria-live="polite"></div>
+                </div>
+                <div class="col-6 col-md-3">
+                  <label for="adults" class="form-label">Adults</label>
+                  <input type="number" class="form-control" id="adults" min="1" max="50" value="2" required>
+                </div>
+                <div class="col-6 col-md-3">
+                  <label for="children" class="form-label">Children</label>
+                  <input type="number" class="form-control" id="children" min="0" max="50" value="0">
+                </div>
+                <div class="col-md-6">
+                  <span class="form-label d-block mb-2">Accommodation</span>
+                  <div class="level-options">
+                    <div>
+                      <input type="radio" name="level" id="lvlBudget" value="Budget">
+                      <label for="lvlBudget"><i class="fa-solid fa-campground"></i>Budget</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="level" id="lvlMid" value="Mid-range" checked>
+                      <label for="lvlMid"><i class="fa-solid fa-hotel"></i>Mid-range</label>
+                    </div>
+                    <div>
+                      <input type="radio" name="level" id="lvlLux" value="Luxury">
+                      <label for="lvlLux"><i class="fa-solid fa-gem"></i>Luxury</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-step"><span>2</span> Your details</div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="fullName" class="form-label">Full Name</label>
+                  <input type="text" class="form-control" id="fullName" placeholder="Your name" autocomplete="name" required>
+                  <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="country" class="form-label">Country</label>
+                  <input type="text" class="form-control" id="country" placeholder="Where are you travelling from?" autocomplete="country-name">
+                </div>
+                <div class="col-md-6">
+                  <label for="emailBooking" class="form-label">Email Address</label>
+                  <input type="email" class="form-control" id="emailBooking" placeholder="you@example.com" autocomplete="email" required>
+                  <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Phone / WhatsApp</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="+256 ..." autocomplete="tel">
+                </div>
+                <div class="col-12">
+                  <label for="messageBooking" class="form-label">Anything else we should know?</label>
+                  <textarea class="form-control" id="messageBooking" rows="4"
+                    placeholder="Special interests, dietary needs, celebrations, flight details..."></textarea>
+                </div>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2 mt-4">
+                <button type="submit" class="btn btn-whatsapp-send btn-lg" data-send="whatsapp">
+                  <i class="fa-brands fa-whatsapp me-1"></i> Send via WhatsApp
+                </button>
+                <button type="submit" class="btn btn-warning btn-lg" data-send="email">
+                  <i class="fa-solid fa-envelope me-1"></i> Send via Email
+                </button>
+              </div>
+              <p class="small text-muted mt-3 mb-0"><i class="fa-solid fa-lock me-1"></i> Your details are only used to plan your trip.</p>
+            </form>
+
+            <div class="success-box" id="successBox" role="status">
+              <i class="fa-solid fa-circle-check mb-3"></i>
+              <h3 class="fw-bold" style="color:var(--safari-green)">Thank you! Your request is ready.</h3>
+              <p class="text-muted mb-4">Just press <strong>send</strong> in the WhatsApp or email window that opened.
+                Our team will get back to you shortly with your tailored itinerary.</p>
+              <a href="tours.html" class="btn btn-safari">Keep Exploring Tours</a>
+            </div>
+
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="emailBooking" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="emailBooking" placeholder="Your Email" required>
+
+        <!-- Side info -->
+        <div class="col-lg-4">
+          <div class="info-card">
+            <h4>Why book with us?</h4>
+            <div class="perk"><i class="fa-solid fa-hand-holding-heart"></i>
+              <div>
+                <h6>Free, no-obligation quote</h6>
+                <p>Ask anything. You only confirm when you're happy.</p>
+              </div>
+            </div>
+            <div class="perk"><i class="fa-solid fa-user-shield"></i>
+              <div>
+                <h6>Private &amp; flexible</h6>
+                <p>Your own vehicle and guide, on your chosen dates.</p>
+              </div>
+            </div>
+            <div class="perk"><i class="fa-solid fa-ticket"></i>
+              <div>
+                <h6>Permits handled</h6>
+                <p>We help secure gorilla and chimp permits early.</p>
+              </div>
+            </div>
+            <div class="perk"><i class="fa-solid fa-people-group"></i>
+              <div>
+                <h6>Local experts</h6>
+                <p>Knowledgeable Ugandan guides who love what they do.</p>
+              </div>
+            </div>
+            <hr class="my-4" style="border-color:rgba(255,255,255,.2);opacity:1">
+            <h6 class="fw-bold mb-2">Prefer to talk?</h6>
+            <p class="small mb-1"><i class="fa-brands fa-whatsapp me-2"></i><a href="https://wa.me/256742015425" target="_blank" rel="noopener">+256 742 015425</a></p>
+            <p class="small mb-0"><i class="fa-solid fa-envelope me-2"></i><a href="mailto:gratiustoursandtravel@gmail.com">gratiustoursandtravel@gmail.com</a></p>
+          </div>
         </div>
-        <div class="mb-3">
-          <label for="package" class="form-label">Package</label>
-          <select class="form-select" id="package" required>
-            <option selected disabled>Select Package</option>
-            <option>Gorilla Trekking Adventure</option>
-            <option>Wildlife Safari Experience</option>
-            <option>Nile River Rafting</option>
-            <option>Lake Bunyonyi Camping</option>
-            <option>Kampala City Tour</option>
-            <option>Sunset Boat Cruise</option>
-          </select>
-        </div>
-        <div class="mb-3">
-          <label for="messageBooking" class="form-label">Additional Requests</label>
-          <textarea class="form-control" id="messageBooking" rows="4" placeholder="Your message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-warning">Submit Booking</button>
-      </form>
+
+      </div>
     </div>
   </section>
 
-
-  <!--  Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-      <p>© 2025 Pearl Quest Safaris Tours And Travel | Designed with ❤️ in Uganda</p>
-      <p class="creator">
-        Created by <strong>Jane</strong>
-      </p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="images/gratius-logo.png" alt="Gratius Tours and Travel" class="footer-logo mb-3" width="130" height="130" loading="lazy">
+          <p class="opacity-75 mb-1">Your trusted partner in exploring Uganda's wildlife, culture and unforgettable
+            adventures. Private, tailor-made safaris planned by local experts.</p>
+          <p class="footer-tagline">Explore Africa. Discover More.</p>
+          <div class="social mt-3">
+            <a href="https://www.facebook.com/share/14Tp9AVRorJ/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/deangratius" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/gratiustours" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/256742015425" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 f-links">
+          <h5>Explore</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="tours.html">Tours &amp; Packages</a>
+          <a href="photo_album.html">Photo Album</a>
+          <a href="contact.html">Contact</a>
+          <a href="booking.html">Book a Safari</a>
+        </div>
+        <div class="col-6 col-lg-3 f-links">
+          <h5>Top Tours</h5>
+          <a href="gorilla.html">Gorilla Tracking</a>
+          <a href="tour8.html">Chimpanzee Tracking</a>
+          <a href="elizabeth.html">Queen Elizabeth Safari</a>
+          <a href="tour5.html">Murchison Falls</a>
+          <a href="tour9.html">Kidepo Valley</a>
+        </div>
+        <div class="col-lg-3">
+          <h5>Get in Touch</h5>
+          <div class="contact-line"><i class="fa-solid fa-location-dot"></i><span>Kampala, Uganda</span></div>
+          <div class="contact-line"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/256742015425" target="_blank" rel="noopener">+256 742 015425</a></div>
+          <div class="contact-line"><i class="fa-solid fa-envelope"></i><a href="mailto:gratiustoursandtravel@gmail.com">gratiustoursandtravel@gmail.com</a></div>
+          <div class="contact-line"><i class="fa-brands fa-x-twitter"></i><a href="https://x.com/gratiustours" target="_blank" rel="noopener">@gratiustours</a></div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+        <span>© 2026 Gratius Tours and Travel. All rights reserved.</span>
+        <span>Designed with ❤️ in Uganda · Created by <span class="text-warning fw-semibold">Syrix Technologies</span></span>
+      </div>
+    </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/site.js"></script>
+  <script>
+    (function () {
+      var WHATSAPP = "256742015425";
+      var EMAIL = "gratiustoursandtravel@gmail.com";
+      var form = document.getElementById("bookingForm");
+      var select = document.getElementById("package");
+      var date = document.getElementById("travelDate");
+
+      // No past dates
+      date.min = new Date().toISOString().split("T")[0];
+
+      // Pre-select the tour when coming from a tour page (booking.html?tour=...)
+      var params = new URLSearchParams(location.search);
+      var month = params.get("month");
+      if (month && /^\d{4}-\d{2}$/.test(month)) {
+        var first = month + "-01";
+        date.value = first < date.min ? date.min : first;
+      }
+      var adults = parseInt(params.get("adults"), 10);
+      if (adults > 0 && adults <= 50) document.getElementById("adults").value = adults;
+
+      var wanted = params.get("tour");
+      if (wanted) {
+        var match = Array.prototype.find.call(select.options, function (o) {
+          return o.text.toLowerCase() === wanted.toLowerCase();
+        });
+        if (match) match.selected = true;
+      }
+
+      // Wishlist notes from the homepage (booking.html?notes=...)
+      var notes = params.get("notes");
+      if (notes) document.getElementById("messageBooking").value = notes.slice(0, 500);
+
+      // Live season tip + countdown when a date is picked
+      var info = document.getElementById("dateInfo");
+      var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+      function showDateInfo() {
+        if (!date.value) { info.innerHTML = ""; info.classList.remove("show"); return; }
+        var d = new Date(date.value + "T00:00:00");
+        var today = new Date(); today.setHours(0, 0, 0, 0);
+        var days = Math.round((d - today) / 86400000);
+        var m = d.getMonth();
+        var dry = [0, 1, 5, 6, 7, 8, 11].indexOf(m) > -1;
+        var season = dry
+          ? '<div><i class="fa-solid fa-sun"></i><strong>Dry season in ' + MONTHS[m] + '</strong><span>Great for gorilla trekking and game drives. Permits go fast, so book early!</span></div>'
+          : '<div><i class="fa-solid fa-cloud-rain"></i><strong>Green season in ' + MONTHS[m] + '</strong><span>Lush scenery, baby animals and fewer crowds. Pack a rain jacket.</span></div>';
+        var countdown = days >= 0
+          ? '<div class="cd"><b>' + days + '</b><span>' + (days === 1 ? "day" : "days") + ' until your adventure!</span></div>'
+          : '';
+        info.innerHTML = season + countdown;
+        info.classList.add("show");
+      }
+      date.addEventListener("change", showDateInfo);
+      showDateInfo();
+
+      var sendVia = "whatsapp";
+      form.querySelectorAll("button[data-send]").forEach(function (btn) {
+        btn.addEventListener("click", function () { sendVia = btn.dataset.send; });
+      });
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (!form.checkValidity()) {
+          form.classList.add("was-validated");
+          var firstBad = form.querySelector(":invalid");
+          if (firstBad) firstBad.focus();
+          return;
+        }
+
+        var v = function (id) { return document.getElementById(id).value.trim(); };
+        var level = form.querySelector("input[name=level]:checked");
+        var lines = [
+          "New Safari Booking Request",
+          "",
+          "Tour: " + select.value,
+          "Start date: " + v("travelDate"),
+          "Travellers: " + v("adults") + " adult(s), " + (v("children") || 0) + " child(ren)",
+          "Accommodation: " + (level ? level.value : "-"),
+          "",
+          "Name: " + v("fullName"),
+          "Country: " + (v("country") || "-"),
+          "Email: " + v("emailBooking"),
+          "Phone: " + (v("phone") || "-"),
+          "",
+          "Notes: " + (v("messageBooking") || "-")
+        ];
+        var text = lines.join("\n");
+
+        if (sendVia === "email") {
+          location.href = "mailto:" + EMAIL +
+            "?subject=" + encodeURIComponent("Safari booking request: " + select.value) +
+            "&body=" + encodeURIComponent(text);
+        } else {
+          window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text), "_blank", "noopener");
+        }
+
+        form.style.display = "none";
+        document.getElementById("successBox").style.display = "block";
+        document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+        try { localStorage.removeItem("gt-wish"); } catch (err) { }
+        if (window.GT) GT.confetti();
+      });
+    })();
+  </script>
 </body>
 
 </html>

@@ -4,72 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pearl Quest Safaris Tours And Travel</title>
+  <title>Gratius Tours and Travel | Uganda Wildlife Safaris</title>
+  <meta name="description"
+    content="Private Uganda safaris: gorilla trekking in Bwindi, chimpanzees in Kibale, tree-climbing lions, the Nile and more. Plan your trip with local experts.">
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <style>
-    /* ===== ROOT ===== */
-    :root {
-      --safari-blue: #003366;
-      --safari-gold: #f4c430;
-      --safari-green: #004d00;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-    }
-
-    /* ===== HERO SECTION ===== */
-    header {
-      position: relative;
-      height: 100vh;
-      color: #fff;
-    }
-
-    header video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-    }
-
-    header .overlay {
-      background: rgba(0, 0, 0, 0.70);
-      position: absolute;
-      width: 100%;
-      height: 100%;
-    }
-
-    .hero-title {
-      font-weight: 800;
-      letter-spacing: 1px;
-    }
-
-    .hero-title span {
-      color: var(--safari-gold);
-    }
-
-    .btn-safari {
-      background: var(--safari-blue);
-      color: white;
-      border-radius: 8px;
-      transition: .3s ease;
-    }
-
-    .btn-safari:hover {
-      background: #002244;
-      transform: translateY(-2px);
-    }
-
-    /* ===== NAVBAR ===== */
+    /* Navbar (original colours) */
     .navbar {
       background-color: grey !important;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar.scrolled {
+      background: rgba(0, 0, 0, 0.95) !important;
     }
 
     .nav-link {
@@ -81,202 +35,88 @@
       color: #ffc107 !important;
     }
 
-    .navbar.scrolled {
-      background: rgba(0, 0, 0, 0.95);
+    .brand-name {
+      font-size: 1.2rem;
+      line-height: 1.2;
+      white-space: nowrap;
     }
 
-    /* ===== SAFARI STYLE CARDS (CLEAN & NATURAL) ===== */
-    /* ===== NATURAL SAFARI INTERACTIVE CARDS ===== */
-
-    /* Base layout */
-    .row.g-4 .card {
-      height: 100%;
-      border-radius: 14px;
-      overflow: hidden;
-      background: #fff;
-      cursor: pointer;
-    }
-
-    /* Image treatment */
-    .card img {
-      height: 240px;
-      object-fit: cover;
-      transition: .6s cubic-bezier(.22, .61, .36, 1);
-    }
-
-    /* Subtle life effect */
-    .card {
-      transition: .45s cubic-bezier(.22, .61, .36, 1);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
-    }
-
-    /* On hover – like tourism sites */
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, .15);
-    }
-
-    /* Image becomes alive */
-    .card:hover img {
-      transform: scale(1.03);
-      filter: brightness(1.06);
-    }
-
-    /* Click feeling */
-    .card:active {
-      transform: translateY(1px);
-    }
-
-    /* Text area */
-    .card-body {
-      padding: 18px 20px 22px;
-      position: relative;
-    }
-
-    /* Small reveal line */
-    .card-body::after {
-      content: "";
-      width: 0%;
-      height: 3px;
-      background: var(--safari-gold);
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      transition: .4s ease;
-    }
-
-    .card:hover .card-body::after {
-      width: 100%;
-    }
-
-    /* Typography */
-    .card-body p {
-      font-size: 15px;
-      color: #444;
-      line-height: 1.6;
-    }
-
-    /* Mobile */
-    @media(max-width: 768px) {
-      .card img {
-        height: 200px;
+    @media (max-width: 576px) {
+      .brand-name {
+        font-size: .9rem;
+        white-space: normal;
       }
     }
 
-
-
-    /* ===== ANIMATIONS ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: .6s ease;
-    }
-
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* ===== FOOTER ===== */
+    /* Footer (original colours) */
     footer {
-      background: var(--safari-green);
-      color: white;
+      background: #004d00;
+      color: #fff;
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      text-align: left;
+    footer a {
+      color: #fff;
+      text-decoration: none;
     }
 
-    .newsletter-input {
-      border-radius: 30px;
-      border: none;
-      padding: 10px 15px;
+    footer a:hover {
+      color: #f4c430;
     }
 
-    .social-icons a {
-      color: white;
-      font-size: 22px;
-      margin-right: 12px;
+    footer .f-links a {
+      display: block;
+      margin-bottom: .55rem;
+      opacity: .85;
+    }
+
+    footer .f-links a:hover {
+      opacity: 1;
+    }
+
+    footer .social a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: inline-grid;
+      place-items: center;
+      background: rgba(255, 255, 255, .1);
+      margin-right: .4rem;
       transition: .3s;
     }
 
-    .social-icons a:hover {
-      color: var(--safari-gold);
+    footer .social a:hover {
+      background: #f4c430;
+      color: #1a1a1a;
       transform: translateY(-3px);
     }
 
-    .quick-links a {
-      display: block;
-      color: #fff;
-      text-decoration: none;
-      margin-bottom: 6px;
+    footer .contact-line {
+      display: flex;
+      gap: .7rem;
+      margin-bottom: .8rem;
+      opacity: .9;
     }
 
-    .quick-links a:hover {
-      color: var(--safari-gold);
-    }
-
-    @media(max-width: 768px) {
-      .footer-grid {
-        text-align: center;
-      }
-    }
-
-    /* ===== WHY CHOOSE US – INTERACTIVE ===== */
-
-    .row.g-4>div {
-      transition: .4s ease;
-      padding: 20px;
-      border-radius: 14px;
-      cursor: default;
-    }
-
-    /* Hover card feel */
-    .row.g-4>div:hover {
-      background: rgba(0, 77, 0, .05);
-      transform: translateY(-4px);
-    }
-
-    /* Icon life */
-    .row.g-4 i {
-      transition: .4s ease;
-    }
-
-    .row.g-4>div:hover i {
-      transform: scale(1.15);
-      color: var(--safari-gold) !important;
-    }
-
-    /* Text reveal */
-    .why-item {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: .6s ease;
-    }
-
-    .why-item.show {
-      opacity: 1;
-      transform: translateY(0);
+    footer .contact-line i {
+      color: #f4c430;
+      margin-top: .3rem;
     }
   </style>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 
-<body>
-
+<body class="home">
 
   <!-- 🌐 Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center brand-text" href="index.html">
-        <img src="images/deo1.jpeg" alt="Pearl Quest Safaris Logo" width="45" height="45" class="me-2 rounded-circle">
-        <span class="brand-name">Pearl Quest Safaris Tours & Travel</span>
+        <span class="brand-logo me-2" role="img" aria-label="Gratius Tours and Travel logo"></span>
+        <span class="brand-name">Gratius Tours & Travel</span>
       </a>
-
-
-      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -284,320 +124,925 @@
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link" href="tours.html">Tours & Packages</a></li>
-          <li class="nav-item"><a class="nav-link active" href="photo_album.html">Photo Album</a></li>
+          <li class="nav-item"><a class="nav-link" href="photo_album.html">Photo Album</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-lg-2 d-flex align-items-center"><a class="btn btn-book" href="booking.html"><i
+                class="fa-solid fa-calendar-check me-1"></i> Book Now</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <header class="d-flex align-items-center">
-    <video autoplay muted loop playsinline>
+  <!-- ===================== HERO ===================== -->
+  <header class="hero">
+    <video autoplay muted loop playsinline poster="images/gorillas.jpeg">
       <source src="images/WhatsApp Video 2025-11-02 at 21.59.43.mp4" type="video/mp4">
     </video>
 
-    <div class="overlay"></div>
-
     <div class="container position-relative">
       <div class="row">
-        <div class="col-md-7 text-start">
-          <h1 class="display-4 hero-title">
-            <strong>Discover</strong>
-            <span>The Pearl of Africa</span>
-          </h1>
-
-          <p class="lead mt-3">
-            Explore Uganda’s breathtaking wildlife, culture, and adventures.
+        <div class="col-xl-8 col-lg-10">
+          <div class="hero-eyebrow" data-aos="fade-down"><i class="fa-solid fa-paw"></i> Private wildlife safaris
+            across Uganda</div>
+          <h1 data-aos="fade-up" data-aos-delay="100">Discover <span class="gold">The Pearl of Africa</span></h1>
+          <p class="rotator-line" data-aos="fade-up" data-aos-delay="200">
+            Come face to face with <span class="rotator" id="rotator">mountain gorillas</span>
           </p>
-
-          <a href="tours.html" class="btn btn-safari btn-lg px-4 mt-3">
-            Explore Tours
-          </a>
+          <p class="lead" data-aos="fade-up" data-aos-delay="300">
+            Misty rainforests, golden savannahs and the mighty River Nile. Explore them on a tailor-made journey with
+            local guides who were born here.
+          </p>
+          <div class="hero-actions" data-aos="fade-up" data-aos-delay="400">
+            <a href="booking.html" class="btn btn-warning btn-lg"><i class="fa-solid fa-calendar-check me-1"></i> Plan
+              My Safari</a>
+            <a href="#wildlife" class="btn btn-ghost btn-lg"><i class="fa-solid fa-binoculars me-1"></i> Meet the
+              Wildlife</a>
+          </div>
+          <div class="hero-badges" data-aos="fade-up" data-aos-delay="500">
+            <div><i class="fa-solid fa-hand-holding-heart"></i> Free, no-obligation quote</div>
+            <div><i class="fa-solid fa-user-shield"></i> Private &amp; flexible</div>
+            <div><i class="fa-brands fa-whatsapp"></i> Fast WhatsApp replies</div>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- Quick planner -->
+    <div class="planner">
+      <div class="container">
+        <form class="js-planner" aria-label="Quick safari planner">
+          <div class="field">
+            <i class="fa-solid fa-paw"></i>
+            <div class="w-100">
+              <label for="qpTour">What do you want to experience?</label>
+              <select id="qpTour" name="tour">
+                <option value="">Help me choose…</option>
+                <option>3-Day Gorilla Tracking &amp; Lake Bunyonyi</option>
+                <option>7-Day Gorilla, Chimps &amp; Wildlife Tour</option>
+                <option>3-Day Kibale Chimpanzee Tracking</option>
+                <option>3-Day Queen Elizabeth &amp; Kazinga Channel</option>
+                <option>3-Day Murchison Falls National Park</option>
+                <option>6-Day Ultimate Wildlife Safari Experience</option>
+                <option>5-Day Kidepo Valley &amp; Cultural Experience</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <i class="fa-regular fa-calendar"></i>
+            <div class="w-100">
+              <label for="qpMonth">When?</label>
+              <select id="qpMonth" name="month"></select>
+            </div>
+          </div>
+          <div class="field">
+            <i class="fa-solid fa-user-group"></i>
+            <div class="w-100">
+              <label for="qpPeople">Travellers</label>
+              <input id="qpPeople" name="adults" type="number" min="1" max="30" value="2">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-warning"><i class="fa-solid fa-magnifying-glass me-1"></i> Start
+            Planning</button>
+        </form>
+      </div>
+    </div>
+
+    <a href="#stats" class="hero-scroll d-none d-lg-block" aria-label="Scroll down" style="bottom:8px"><i
+        class="fa-solid fa-chevron-down"></i></a>
   </header>
 
-  <!-- ===== WHY CHOOSE US ===== -->
-  <section class="py-5 bg-light text-center">
+  <!-- ===================== STATS ===================== -->
+  <section class="stats" id="stats">
     <div class="container">
-      <h2 class="fw-bold mb-4" style="color:#004d00">Why Travel With Us?</h2>
-
       <div class="row g-4">
-        <div class="col-md-4">
-          <i class="fa-solid fa-mountain-sun fa-3x mb-3" style="color:#003366"></i>
-          <h5>Unforgettable Experiences</h5>
-          <p>From gorilla trekking to rafting on the Nile.</p>
+        <div class="col-6 col-md-3 stat">
+          <div class="num"><span class="count" data-to="10">0</span></div>
+          <div class="lbl">National parks to explore</div>
         </div>
-
-        <div class="col-md-4">
-          <i class="fa-solid fa-people-group fa-3x mb-3" style="color:#003366"></i>
-          <h5>Expert Local Guides</h5>
-          <p>Friendly and knowledgeable Ugandan guides.</p>
+        <div class="col-6 col-md-3 stat">
+          <div class="num"><span class="count" data-to="1000">0</span>+</div>
+          <div class="lbl">Bird species recorded</div>
         </div>
-
-        <div class="col-md-4">
-          <i class="fa-solid fa-earth-africa fa-3x mb-3" style="color:#003366"></i>
-          <h5>Sustainable Tourism</h5>
-          <p>Supporting communities and conservation.</p>
+        <div class="col-6 col-md-3 stat">
+          <div class="num">½</div>
+          <div class="lbl">Of the world's mountain gorillas live here</div>
         </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Popular Destinations -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center fw-bold mb-5 text-success">Top Destinations</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            <img src="images/gorillas.jpeg" class="card-img-top" alt="Bwindi Forest">
-            <div class="card-body text-center">
-              <h5 class="fw-bold text-warning">Bwindi Impenetrable Forest</h5>
-              <p>Track the endangered mountain gorillas in their lush natural habitat.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            <img src="images/falls.jpg" class="card-img-top" alt="Murchison Falls">
-            <div class="card-body text-center">
-              <h5 class="fw-bold text-warning">Murchison Falls National Park</h5>
-              <p>Witness Uganda’s majestic waterfall and amazing wildlife along the Nile River.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            <img src="images/kidepo.jpg" class="card-img-top" alt="Kidepo Valley">
-            <div class="card-body text-center">
-              <h5 class="fw-bold text-warning">Kidepo Valley</h5>
-              <p>Enjoy scenic savannahs and meet traditional Karamojong communities.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            <img src="images/queen Elizabeth.jpeg" class="card-img-top" alt="Kidepo Valley">
-            <div class="card-body text-center">
-              <h5 class="fw-bold text-warning">Queen Elizabeth</h5>
-              <p>Queen Elizabeth’s vast savanna ecosystem is primarily open grassland, though it transitions into moist
-                and woody terrain towards the west. The park’s thorny acacia woodlands, along with dense candelabra
-                shrubs, create a distinct habitat, particularly along the Kazinga Channel and the Kasenyi Plains.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            <img src="images/kibale1.png" class="card-img-top" alt="Kidepo Valley">
-            <div class="card-body text-center">
-              <h5 class="fw-bold text-warning">Kibale National Park</h5>
-              <p>Tourists flock to Kibale National Park, known as Africa's primate capital, primarily for chimpanzee
-                trekking, guided walks, birdwatching, and cultural experiences,with peak dry seasons(June-Aug, Dec-Feb).
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm">
-            <img src="images/pic13.jpeg" class="card-img-top" alt="Kidepo Valley">
-            <div class="card-body text-center">
-              <h5 class="fw-bold text-warning">Lake Mburo</h5>
-              <p>The lake and its lush fringing vegetation also aupports a health population of Buffaloes, Warthogs,
-                Bushpigs and hippos.</p>
-            </div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Testimonials -->
-
-  <section class="py-5 bg-light text-center">
-    <div class="container">
-      <h2 class="fw-bold mb-5 text-success">What Our Travelers Say</h2>
-      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="testimonial mx-auto w-75">
-              <p>"Our gorilla trekking experience was incredible! Pearl Quest made everything seamless and
-                memorable."
-              </p>
-              <h6 class="text-warning fw-bold mt-3">— Sarah, UK</h6>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="testimonial mx-auto w-75">
-              <p>"Highly professional team! The guides were knowledgeable, and the trip was perfectly
-                organized."</p>
-              <h6 class="text-warning fw-bold mt-3">— Daniel, USA</h6>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="testimonial mx-auto w-75">
-              <p>"The safari, culture, and nature — everything was amazing. I can’t wait to come back!"
-              </p>
-              <h6 class="text-warning fw-bold mt-3">— Maria, Spain</h6>
-            </div>
-          </div>
+        <div class="col-6 col-md-3 stat">
+          <div class="num"><span class="count" data-to="13">0</span></div>
+          <div class="lbl">Primate species in Kibale Forest</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== NEWSLETTER ===== -->
-  <section class="py-5 text-center text-white" style="background:#235236">
+  <!-- ===================== WELCOME ===================== -->
+  <section class="sec-pad">
     <div class="container">
-      <h2 class="fw-bold">Stay Updated</h2>
-      <p>Get exclusive Uganda travel deals & safari updates.</p>
-
-      <form class="d-flex justify-content-center flex-wrap gap-2">
-        <input type="email" class="newsletter-input w-50" placeholder="Enter your email">
-        <button class="btn btn-safari px-4">Subscribe</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="py-5">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand -->
-        <div>
-          <h5 class="fw-bold">Pearl Quest Safaris</h5>
-          <p>
-            Your trusted partner in exploring Uganda’s wildlife,
-            culture and unforgettable adventures.
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="collage">
+            <img class="c1" src="images/g3.png" alt="Silverback mountain gorilla in Bwindi">
+            <img class="c3" src="images/crane.jpg" alt="Grey crowned crane, Uganda's national bird">
+            <img class="c2" src="images/Queen_Elizabeth_National_Park_005.jpg"
+              alt="Savannah plains of Queen Elizabeth National Park">
+            <div class="badge-float">
+              <strong>Uganda</strong>
+              <span>"The Pearl of Africa", as Winston Churchill called it</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <span class="section-eyebrow">Welcome to Uganda</span>
+          <h2 class="fw-bold display-6 mb-3" style="color:#004d00">Where the rainforest meets the savannah</h2>
+          <p class="text-muted">
+            Uganda packs an astonishing range of wild places into one country. Track mountain gorillas through misty
+            Bwindi in the morning, watch elephants and lions on the open plains, cruise past hundreds of hippos, and
+            stand where the Nile thunders through a narrow gorge at Murchison Falls.
           </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="quick-links">
-          <h5>Quick Links</h5>
-          <a href="index.html">Home</a>
-          <a href="tours.html">Tours & Packages</a>
-          <a href="about.html">About Us</a>
-          <a href="contact.html">Contact</a>
-        </div>
-
-        <!-- Social & Contact -->
-        <div>
-          <h5>Connect With Us</h5>
-
-          <div class="social-icons mb-3">
-            <a href="https://www.facebook.com/share/14Tp9AVRorJ/"><i class="fab fa-facebook"></i></a>
-            <a href="https://www.instagram.com/deangratius"><i class="fab fa-instagram"></i></a>
+          <p class="text-muted mb-0">
+            At <strong>Gratius Tours</strong> we design private trips around you: your dates, your pace, your
+            budget. We handle permits, lodges, transport and guides, so all you do is enjoy the wild.
+          </p>
+          <ul class="check-list">
+            <li><i class="fa-solid fa-circle-check"></i> Gorilla &amp; chimp permits arranged</li>
+            <li><i class="fa-solid fa-circle-check"></i> 4x4 safari vehicles</li>
+            <li><i class="fa-solid fa-circle-check"></i> Experienced Ugandan guides</li>
+            <li><i class="fa-solid fa-circle-check"></i> Airport pickup at Entebbe</li>
+            <li><i class="fa-solid fa-circle-check"></i> Hand-picked lodges</li>
+            <li><i class="fa-solid fa-circle-check"></i> Support for local communities</li>
+          </ul>
+          <div class="d-flex flex-wrap gap-2">
+            <a href="about.html" class="btn btn-safari btn-lg">About Us</a>
+            <a href="tours.html" class="btn btn-outline-navy btn-lg">View All Tours</a>
           </div>
-
-          <small>Designed with ❤️ in Uganda</small><br>
-          <small class="text-warning">Created by Jane</small>
         </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ===================== WILDLIFE ===================== -->
+  <section class="wildlife sec-pad" id="wildlife">
+    <img class="sil-deco" src="images/girafu.png" alt="" style="width:180px;height:290px;left:-30px;top:60px">
+    <img class="sil-deco" src="images/lion.png" alt="" style="width:260px;height:165px;right:-20px;top:120px">
+
+    <div class="container position-relative">
+      <div class="sec-head light" data-aos="fade-up">
+        <div class="paw-line">Wildlife you'll meet</div>
+        <h2>Uganda's Wild Residents</h2>
+        <p>From gentle giants of the forest to the big cats of the plains, here's who you could meet on safari. Hover
+          over a card to learn more.</p>
       </div>
 
-      <hr class="my-4">
-      <p class="text-center mb-0">
-        © 2026 Pearl Quest Safaris Tours And Travel
-      </p>
+      <div class="filter-chips" role="group" aria-label="Filter wildlife" data-aos="fade-up">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="primates"><i class="fa-solid fa-tree me-1"></i> Primates</button>
+        <button data-filter="cats"><i class="fa-solid fa-paw me-1"></i> Big Cats</button>
+        <button data-filter="giants"><i class="fa-solid fa-mountain me-1"></i> Giants</button>
+        <button data-filter="plains"><i class="fa-solid fa-feather me-1"></i> Plains &amp; Birds</button>
+      </div>
 
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="primates" data-aos="fade-up">
+          <div class="animal" tabindex="0">
+            <img src="images/g3.png" alt="Mountain gorilla" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Bwindi &amp; Mgahinga</span>
+              <h4>Mountain Gorilla</h4>
+              <div class="latin">Gorilla beringei beringei</div>
+              <p class="fact">More than half of the world's remaining mountain gorillas live in Uganda. Spend one
+                unforgettable hour with a habituated family.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="primates" data-aos="fade-up" data-aos-delay="100">
+          <div class="animal" tabindex="0">
+            <img src="images/Chimpanzee (Pan troglodytes) _ Chimpanzé _ Image….jpg" alt="Chimpanzee" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Kibale Forest</span>
+              <h4>Chimpanzee</h4>
+              <div class="latin">Pan troglodytes</div>
+              <p class="fact">Our closest living relatives share about 98% of our DNA. Kibale is often called the
+                primate capital of the world.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="cats" data-aos="fade-up" data-aos-delay="200">
+          <div class="animal" tabindex="0">
+            <img src="images/Murchison_Falls_National_Park_010 (1).jpg" alt="African lion" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Ishasha &amp; Murchison</span>
+              <h4>African Lion</h4>
+              <div class="latin">Panthera leo</div>
+              <p class="fact">In the Ishasha sector of Queen Elizabeth, lions are famous for lounging high up in
+                fig trees, a rare sight in Africa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="cats" data-aos="fade-up" data-aos-delay="300">
+          <div class="animal" tabindex="0">
+            <img src="images/Queen_Elizabeth_National_Park_046.jpg" alt="Leopard" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Queen Elizabeth</span>
+              <h4>Leopard</h4>
+              <div class="latin">Panthera pardus</div>
+              <p class="fact">Elusive and solitary. Your best chance is an early-morning or late-evening game drive,
+                when leopards are on the move.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="giants" data-aos="fade-up">
+          <div class="animal" tabindex="0">
+            <img src="images/Murchison_Falls_National_Park_024.jpg" alt="African elephant" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Murchison &amp; Queen Elizabeth</span>
+              <h4>African Elephant</h4>
+              <div class="latin">Loxodonta africana</div>
+              <p class="fact">The largest land animal on Earth. Herds often gather near water, especially along the
+                Nile and the Kazinga Channel.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="giants" data-aos="fade-up" data-aos-delay="100">
+          <div class="animal" tabindex="0">
+            <img src="images/Hippopotamus, Kazinga Channel, Uganda.jpg" alt="Hippopotamus" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Kazinga Channel</span>
+              <h4>Hippopotamus</h4>
+              <div class="latin">Hippopotamus amphibius</div>
+              <p class="fact">The Kazinga Channel has one of the highest concentrations of hippos in Africa. See
+                them up close on a boat cruise.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="giants" data-aos="fade-up" data-aos-delay="200">
+          <div class="animal" tabindex="0">
+            <img src="images/Ziwa_Rhino_and_Wildlife_Ranch_004.jpg" alt="White rhino" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Ziwa Rhino Sanctuary</span>
+              <h4>White Rhino</h4>
+              <div class="latin">Ceratotherium simum</div>
+              <p class="fact">Ziwa is the only place in Uganda where you can track rhinos on foot, a great stop on
+                the way to Murchison Falls.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="giants" data-aos="fade-up" data-aos-delay="300">
+          <div class="animal" tabindex="0">
+            <img src="images/Giraffes in Kidepo valley national park.jpg" alt="Rothschild's giraffe" loading="lazy" style="object-position:60% 75%">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Murchison &amp; Kidepo</span>
+              <h4>Rothschild's Giraffe</h4>
+              <div class="latin">Giraffa camelopardalis</div>
+              <p class="fact">A rare giraffe subspecies. Look for its "white stockings": no markings below the
+                knees.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="giants" data-aos="fade-up">
+          <div class="animal" tabindex="0">
+            <img src="images/Queen_Elizabeth_National_Park_026.jpg" alt="African buffalo herd" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Queen Elizabeth</span>
+              <h4>African Buffalo</h4>
+              <div class="latin">Syncerus caffer</div>
+              <p class="fact">Large herds wallow in the shallows of the Kazinga Channel to keep cool in the midday
+                heat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="plains" data-aos="fade-up" data-aos-delay="100">
+          <div class="animal" tabindex="0">
+            <img src="images/Queen_Elizabeth_National_Park_008.jpg" alt="Uganda kob" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Queen Elizabeth &amp; Murchison</span>
+              <h4>Uganda Kob</h4>
+              <div class="latin">Kobus kob thomasi</div>
+              <p class="fact">This graceful antelope appears on Uganda's national coat of arms, and you'll see
+                plenty on the plains.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="plains" data-aos="fade-up" data-aos-delay="200">
+          <div class="animal" tabindex="0">
+            <img src="images/crane.jpg" alt="Grey crowned crane" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Wetlands nationwide</span>
+              <h4>Grey Crowned Crane</h4>
+              <div class="latin">Balearica regulorum</div>
+              <p class="fact">Uganda's national bird, proudly displayed in the centre of the national flag.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3 animal-col" data-cat="plains" data-aos="fade-up" data-aos-delay="300">
+          <div class="animal" tabindex="0">
+            <img src="images/Queen_Elizabeth_National_Park_031.jpg" alt="Pelicans on the water" loading="lazy">
+            <div class="info">
+              <span class="where"><i class="fa-solid fa-location-dot"></i> Lakes &amp; channels</span>
+              <h4>Great White Pelican</h4>
+              <div class="latin">Pelecanus onocrotalus</div>
+              <p class="fact">One of over 1,000 bird species in Uganda, a true paradise for birdwatchers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5" data-aos="fade-up">
+        <p class="text-white-50 mb-3"><i class="fa-solid fa-binoculars text-gold me-1"></i> Tap <strong
+            class="text-white">“Add to wishlist”</strong> on the animals you dream of seeing, and we'll plan a trip
+          around them.</p>
+        <a href="booking.html" class="btn btn-warning btn-lg" id="wishlistCta"><i
+            class="fa-solid fa-binoculars me-1"></i> I Want to See Them</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PARKS EXPLORER ===================== -->
+  <section class="parks sec-pad" id="parks">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Where to go</div>
+        <h2 style="color:#004d00">Explore Uganda's National Parks</h2>
+        <p>Every park has its own character. Pick one to see what makes it special, the best things to do and which
+          animals live there.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4" data-aos="fade-right">
+          <div class="park-tabs" role="tablist" id="parkTabs"></div>
+        </div>
+        <div class="col-lg-8" data-aos="fade-left">
+          <div class="park-panel" id="parkPanel" role="tabpanel" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCES ===================== -->
+  <section class="sec-pad">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Things to do</div>
+        <h2 style="color:#004d00">Unforgettable Safari Experiences</h2>
+        <p>There's much more to Uganda than game drives. Mix and match these experiences into your perfect trip.</p>
+      </div>
+
+      <div class="exp-grid">
+        <a href="gorilla.html" class="exp big" data-aos="zoom-in">
+          <img src="images/trekking.jpg" alt="Gorilla trekking in Bwindi" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-person-hiking"></i>
+            <h5>Gorilla Trekking</h5>
+            <p>Hike through ancient rainforest for a life-changing hour with a gorilla family.</p>
+          </div>
+        </a>
+        <a href="tour7.html" class="exp" data-aos="zoom-in" data-aos-delay="100">
+          <img src="images/wildlife.jpg" alt="Game drive with elephants" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-truck-monster"></i>
+            <h5>Game Drives</h5>
+          </div>
+        </a>
+        <a href="elizabeth.html" class="exp" data-aos="zoom-in" data-aos-delay="200">
+          <img src="images/cruise.jpg" alt="Boat cruise on the Kazinga Channel" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-ship"></i>
+            <h5>Boat Safaris</h5>
+          </div>
+        </a>
+        <a href="tour8.html" class="exp" data-aos="zoom-in">
+          <img src="images/kibale4.png" alt="Chimpanzee in Kibale Forest" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-tree"></i>
+            <h5>Chimp Tracking</h5>
+          </div>
+        </a>
+        <a href="booking.html?tour=Custom%20safari%20(help%20me%20plan)" class="exp" data-aos="zoom-in"
+          data-aos-delay="100">
+          <img src="images/r1.png" alt="White water rafting on the Nile" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-water"></i>
+            <h5>Nile Rafting</h5>
+          </div>
+        </a>
+        <a href="tour10.html" class="exp wide" data-aos="zoom-in">
+          <img src="images/Buganda dancer.jpg" alt="Traditional Ugandan dancers" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-drum"></i>
+            <h5>Cultural Encounters</h5>
+            <p>Dance, drum and share stories with Uganda's communities.</p>
+          </div>
+        </a>
+        <a href="booking.html?tour=Custom%20safari%20(help%20me%20plan)" class="exp wide" data-aos="zoom-in"
+          data-aos-delay="100">
+          <img src="images/rwenzori.jpg" alt="Snow-capped Rwenzori Mountains" loading="lazy">
+          <span class="go"><i class="fa-solid fa-arrow-right"></i></span>
+          <div class="cap"><i class="fa-solid fa-mountain-sun"></i>
+            <h5>Mountains &amp; Lakes</h5>
+            <p>Hike the Rwenzori "Mountains of the Moon" or relax by Lake Bunyonyi.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== A DAY WITH GORILLAS ===================== -->
+  <section class="gorilla-day sec-pad">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-7" data-aos="fade-right">
+          <div class="sec-head light text-start mx-0 mb-0">
+            <div class="paw-line">Bucket-list moment</div>
+            <h2>A Day Tracking Mountain Gorillas</h2>
+            <p>Wondering what gorilla trekking is really like? Here's how your day unfolds in Bwindi Impenetrable
+              Forest.</p>
+          </div>
+          <div class="timeline-x">
+            <div class="t-step">
+              <div class="dot"><i class="fa-solid fa-mug-hot"></i></div>
+              <div class="time">Early morning</div>
+              <h5>Briefing with the rangers</h5>
+              <p>Meet the Uganda Wildlife Authority rangers at the park office. They'll tell you about the gorilla
+                family you'll visit and the trekking rules.</p>
+            </div>
+            <div class="t-step">
+              <div class="dot"><i class="fa-solid fa-person-hiking"></i></div>
+              <div class="time">The trek</div>
+              <h5>Into the "impenetrable" forest</h5>
+              <p>Follow trackers along muddy trails and through thick vegetation. Depending on where the family moved
+                overnight, the hike can take from one to several hours.</p>
+            </div>
+            <div class="t-step">
+              <div class="dot"><i class="fa-solid fa-heart"></i></div>
+              <div class="time">The magic hour</div>
+              <h5>Face to face with gorillas</h5>
+              <p>Spend one precious hour watching the silverback, mothers and playful babies go about their day,
+                just metres away.</p>
+            </div>
+            <div class="t-step mb-0">
+              <div class="dot"><i class="fa-solid fa-award"></i></div>
+              <div class="time">Afternoon</div>
+              <h5>Certificate &amp; celebration</h5>
+              <p>Walk back to receive your gorilla trekking certificate, then relax at your lodge with stories you'll
+                tell for a lifetime.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5" data-aos="fade-left">
+          <div class="rule-card">
+            <h5 class="mb-3"><i class="fa-solid fa-circle-info text-gold me-2"></i>Good to know</h5>
+            <div class="rule"><i class="fa-solid fa-ticket"></i>
+              <div><strong>Permit required</strong><span>Permits are limited each day, so book early. We arrange
+                  them for you.</span></div>
+            </div>
+            <div class="rule"><i class="fa-solid fa-id-card"></i>
+              <div><strong>Minimum age 15</strong><span>Trekkers must be at least 15 years old.</span></div>
+            </div>
+            <div class="rule"><i class="fa-solid fa-people-group"></i>
+              <div><strong>Small groups</strong><span>A maximum of 8 visitors per gorilla family each day.</span>
+              </div>
+            </div>
+            <div class="rule"><i class="fa-solid fa-ruler-horizontal"></i>
+              <div><strong>Keep your distance</strong><span>Stay about 7 metres away to protect the gorillas'
+                  health.</span></div>
+            </div>
+            <div class="rule"><i class="fa-solid fa-shoe-prints"></i>
+              <div><strong>Dress for the jungle</strong><span>Hiking boots, long sleeves, a rain jacket and
+                  gardening gloves.</span></div>
+            </div>
+            <a href="booking.html?tour=3-Day%20Gorilla%20Tracking%20%26%20Lake%20Bunyonyi"
+              class="btn btn-warning w-100 mt-3">Book a Gorilla Trek</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SAFARI QUIZ ===================== -->
+  <section class="sec-pad quiz-sec" id="quiz">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Quick quiz · 30 seconds</div>
+        <h2 style="color:#004d00">Which Uganda Safari Are You?</h2>
+        <p>Answer four quick questions and we'll match you with your perfect adventure.</p>
+      </div>
+      <div class="quiz-card" data-aos="zoom-in">
+        <div class="quiz-progress"><span id="quizBar"></span></div>
+        <div id="quizBody" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED TOURS ===================== -->
+  <section class="sec-pad bg-light">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Most loved</div>
+        <h2 style="color:#004d00">Popular Safari Packages</h2>
+        <p>Ready-made itineraries our guests love. Every tour is private and can be adjusted to suit you.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="ftour">
+            <div class="img">
+              <img src="images/gorillas.jpeg" alt="Mountain gorillas in Bwindi" loading="lazy">
+              <div class="days">3<small>DAYS</small></div>
+            </div>
+            <div class="body">
+              <h5>Gorilla Tracking &amp; Lake Bunyonyi</h5>
+              <div class="route"><i class="fa-solid fa-route me-1"></i> Entebbe · Bwindi · Lake Bunyonyi</div>
+              <ul>
+                <li><i class="fa-solid fa-check"></i>Gorilla trekking in Bwindi</li>
+                <li><i class="fa-solid fa-check"></i>Relaxing canoe on Lake Bunyonyi</li>
+                <li><i class="fa-solid fa-check"></i>Equator crossing stop</li>
+              </ul>
+              <div class="actions">
+                <a href="gorilla.html" class="btn btn-outline-navy">Itinerary</a>
+                <a href="booking.html?tour=3-Day%20Gorilla%20Tracking%20%26%20Lake%20Bunyonyi"
+                  class="btn btn-warning">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="ftour">
+            <div class="img">
+              <img src="images/Bwindi_Impenetrable_National_Park_007.jpg" alt="Gorillas, chimps and wildlife"
+                loading="lazy">
+              <div class="days">7<small>DAYS</small></div>
+            </div>
+            <div class="body">
+              <h5>Gorillas, Chimps &amp; Wildlife</h5>
+              <div class="route"><i class="fa-solid fa-route me-1"></i> Kibale · Queen Elizabeth · Bwindi</div>
+              <ul>
+                <li><i class="fa-solid fa-check"></i>Chimp tracking in Kibale</li>
+                <li><i class="fa-solid fa-check"></i>Game drives &amp; Kazinga boat cruise</li>
+                <li><i class="fa-solid fa-check"></i>Gorilla trekking in Bwindi</li>
+              </ul>
+              <div class="actions">
+                <a href="tour4.html" class="btn btn-outline-navy">Itinerary</a>
+                <a href="booking.html?tour=7-Day%20Gorilla%2C%20Chimps%20%26%20Wildlife%20Tour"
+                  class="btn btn-warning">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="ftour">
+            <div class="img">
+              <img src="images/elephants.jpeg" alt="Elephants on safari" loading="lazy">
+              <div class="days">6<small>DAYS</small></div>
+            </div>
+            <div class="body">
+              <h5>Ultimate Wildlife Safari</h5>
+              <div class="route"><i class="fa-solid fa-route me-1"></i> Murchison · Queen Elizabeth · Lake Mburo</div>
+              <ul>
+                <li><i class="fa-solid fa-check"></i>Top of Murchison Falls</li>
+                <li><i class="fa-solid fa-check"></i>Big game on three parks</li>
+                <li><i class="fa-solid fa-check"></i>Zebras &amp; impala at Lake Mburo</li>
+              </ul>
+              <div class="actions">
+                <a href="tour7.html" class="btn btn-outline-navy">Itinerary</a>
+                <a href="booking.html?tour=6-Day%20Ultimate%20Wildlife%20Safari%20Experience"
+                  class="btn btn-warning">Book</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="tours.html" class="btn btn-safari btn-lg px-5">See All 11 Tour Packages <i
+            class="fa-solid fa-arrow-right ms-1"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HOW IT WORKS ===================== -->
+  <section class="sec-pad text-center">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Simple &amp; stress-free</div>
+        <h2 style="color:#004d00">Book Your Safari in 3 Easy Steps</h2>
+      </div>
+      <div class="row gx-4 gy-4 steps">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="step">
+            <div class="num">1</div>
+            <i class="fa-solid fa-map-location-dot fa-2x mb-3"></i>
+            <h5 class="fw-bold">Choose Your Adventure</h5>
+            <p class="mb-0 text-muted">Browse our gorilla, wildlife and cultural tours, or tell us what you dream of
+              seeing.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="step">
+            <div class="num">2</div>
+            <i class="fa-solid fa-paper-plane fa-2x mb-3"></i>
+            <h5 class="fw-bold">Send Your Request</h5>
+            <p class="mb-0 text-muted">Fill in our quick booking form with your dates and group size. It takes under
+              a minute.</p>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="step">
+            <div class="num">3</div>
+            <i class="fa-solid fa-plane-arrival fa-2x mb-3"></i>
+            <h5 class="fw-bold">Get Your Plan &amp; Go</h5>
+            <p class="mb-0 text-muted">We reply with a tailored itinerary and a free quote, then meet you at
+              Entebbe.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLAN YOUR TRIP ===================== -->
+  <section class="sec-pad parks" id="plan">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Know before you go</div>
+        <h2 style="color:#004d00">Planning Your Uganda Trip</h2>
+        <p>Everything first-time visitors usually ask us, in one place.</p>
+      </div>
+
+      <div class="row g-5">
+        <div class="col-lg-6" data-aos="fade-right">
+          <h4 class="fw-bold text-navy"><i class="fa-solid fa-sun text-gold me-2"></i>When is the best time to visit?
+          </h4>
+          <p class="text-muted mb-0">Uganda sits on the equator, so it's warm all year. The dry seasons are the most
+            popular, but every month has something to offer.</p>
+          <div class="months" aria-label="Seasons by month">
+            <div class="dry"><i class="fa-solid fa-sun"></i>Jan</div>
+            <div class="dry"><i class="fa-solid fa-sun"></i>Feb</div>
+            <div class="wet"><i class="fa-solid fa-cloud-rain"></i>Mar</div>
+            <div class="wet"><i class="fa-solid fa-cloud-rain"></i>Apr</div>
+            <div class="wet"><i class="fa-solid fa-cloud-rain"></i>May</div>
+            <div class="dry"><i class="fa-solid fa-sun"></i>Jun</div>
+            <div class="dry"><i class="fa-solid fa-sun"></i>Jul</div>
+            <div class="dry"><i class="fa-solid fa-sun"></i>Aug</div>
+            <div class="dry"><i class="fa-solid fa-sun"></i>Sep</div>
+            <div class="wet"><i class="fa-solid fa-cloud-rain"></i>Oct</div>
+            <div class="wet"><i class="fa-solid fa-cloud-rain"></i>Nov</div>
+            <div class="dry"><i class="fa-solid fa-sun"></i>Dec</div>
+          </div>
+          <div class="legend"><span class="l-dry">Dry season: easier trekking, great game viewing</span><span
+              class="l-wet">Green season: lush scenery, fewer crowds</span></div>
+          <div class="season-note">
+            <div class="d-flex gap-3">
+              <i class="fa-solid fa-lightbulb fa-lg text-gold mt-1"></i>
+              <p class="mb-0 small text-muted"><strong class="text-dark">Local tip:</strong> Gorilla permits sell
+                out fastest for June–September and December–February. If you have dates in mind, send us a request
+                early and we'll secure your permits.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 kbyg" data-aos="fade-left">
+          <div class="accordion" id="kbyg">
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#k1"><i class="fa-solid fa-passport"></i> Visas &amp; entry</button></h2>
+              <div id="k1" class="accordion-collapse collapse show" data-bs-parent="#kbyg">
+                <div class="accordion-body">Most visitors need a visa, which you can apply for online before you
+                  travel. If you're also visiting Kenya or Rwanda, ask about the East Africa Tourist Visa. A yellow
+                  fever vaccination certificate is required on arrival.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#k2"><i class="fa-solid fa-plane"></i> Getting
+                  here</button></h2>
+              <div id="k2" class="accordion-collapse collapse" data-bs-parent="#kbyg">
+                <div class="accordion-body">International flights land at Entebbe International Airport, on the
+                  shores of Lake Victoria. We'll meet you at arrivals and take care of all transfers from there.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#k3"><i class="fa-solid fa-suitcase"></i> What to
+                  pack</button></h2>
+              <div id="k3" class="accordion-collapse collapse" data-bs-parent="#kbyg">
+                <div class="accordion-body">
+                  <ul>
+                    <li>Sturdy, waterproof hiking boots</li>
+                    <li>Light rain jacket and a warm layer for cool mornings</li>
+                    <li>Neutral-coloured, long-sleeved clothing</li>
+                    <li>Binoculars and a camera with extra batteries</li>
+                    <li>Insect repellent, sunscreen and a hat</li>
+                    <li>Gardening gloves for gripping vegetation on treks</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#k4"><i class="fa-solid fa-kit-medical"></i> Health
+                  &amp; safety</button></h2>
+              <div id="k4" class="accordion-collapse collapse" data-bs-parent="#kbyg">
+                <div class="accordion-body">Speak with your doctor about vaccinations and malaria prevention before
+                  you travel. Drink bottled or treated water. Our guides are experienced, carry first-aid kits and
+                  keep you safe around wildlife at all times.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#k5"><i class="fa-solid fa-coins"></i> Money &amp;
+                  tipping</button></h2>
+              <div id="k5" class="accordion-collapse collapse" data-bs-parent="#kbyg">
+                <div class="accordion-body">The local currency is the Uganda Shilling (UGX). Cash is useful in rural
+                  areas and markets, while larger hotels and lodges usually accept cards. Tipping guides and porters
+                  is customary and always appreciated.</div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                  data-bs-toggle="collapse" data-bs-target="#k6"><i class="fa-solid fa-comments"></i> Language
+                  &amp; culture</button></h2>
+              <div id="k6" class="accordion-collapse collapse" data-bs-parent="#kbyg">
+                <div class="accordion-body">English is an official language and widely spoken, along with Swahili
+                  and many local languages such as Luganda. Ugandans are famously friendly. A simple "Oli otya?"
+                  (How are you?) always earns a smile!</div>
+              </div>
+            </div>
+          </div>
+          <p class="small text-muted mt-3 mb-0"><i class="fa-solid fa-circle-question me-1"></i> Still have
+            questions? <a href="contact.html" class="text-success fw-semibold">Contact us</a> or tap the WhatsApp
+            button.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIALS ===================== -->
+  <section class="sec-pad">
+    <div class="container">
+      <div class="sec-head" data-aos="fade-up">
+        <div class="paw-line">Guest stories</div>
+        <h2 style="color:#004d00">What Our Travelers Say</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+          <div class="review">
+            <span class="q">“</span>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>Our gorilla trekking experience was incredible! Gratius made everything seamless and memorable.</p>
+            <div class="who">
+              <div class="av">S</div>
+              <div><strong>Sarah</strong><small>United Kingdom</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="review">
+            <span class="q">“</span>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>Highly professional team! The guides were knowledgeable, and the trip was perfectly organized.</p>
+            <div class="who">
+              <div class="av" style="background:#003366">D</div>
+              <div><strong>Daniel</strong><small>United States</small></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="review">
+            <span class="q">“</span>
+            <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+            <p>The safari, culture, and nature: everything was amazing. I can't wait to come back!</p>
+            <div class="who">
+              <div class="av" style="background:#e0a800;color:#1a1a1a">M</div>
+              <div><strong>Maria</strong><small>Spain</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PHOTO STRIP ===================== -->
+  <div class="photo-strip">
+    <a href="photo_album.html" aria-label="Photo album"><img src="images/pic10.jpeg" alt="Gorilla family"
+        loading="lazy"></a>
+    <a href="photo_album.html" aria-label="Photo album"><img src="images/Murchison Falls,.jpg" alt="Murchison Falls"
+        loading="lazy"></a>
+    <a href="photo_album.html" aria-label="Photo album"><img src="images/q2.png" alt="Hippos in the water"
+        loading="lazy"></a>
+    <a href="photo_album.html" aria-label="Photo album"><img src="images/lake bunyonyi.jpg" alt="Lake Bunyonyi"
+        loading="lazy"></a>
+    <a href="photo_album.html" aria-label="Photo album"><img src="images/Kidepo Valley.jpg" alt="Kidepo Valley"
+        loading="lazy"></a>
+    <a href="photo_album.html" aria-label="Photo album"><img src="images/culture.jpg" alt="Ugandan culture"
+        loading="lazy"></a>
+  </div>
+
+  <!-- ===================== CTA ===================== -->
+  <section class="cta-band text-center">
+    <div class="container position-relative" data-aos="zoom-in">
+      <h2 class="display-6 mb-3">Your Uganda Adventure Starts Here</h2>
+      <p class="lead">Tell us where you want to go and when. Our team will build your perfect safari and send you a
+        free, no-obligation quote.</p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="booking.html" class="btn btn-warning btn-lg"><i class="fa-solid fa-calendar-check me-1"></i> Book
+          Your Safari</a>
+        <a href="https://wa.me/256742015425" target="_blank" rel="noopener" class="btn btn-ghost btn-lg"><i
+            class="fa-brands fa-whatsapp me-1"></i> Chat on WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== NEWSLETTER ===================== -->
+  <section class="newsletter text-center">
+    <div class="container">
+      <h3 class="fw-bold mb-2">Get Safari Stories in Your Inbox</h3>
+      <p class="mb-4 opacity-75">Travel tips, wildlife news and new tours from Uganda.</p>
+      <form id="newsletterForm">
+        <input type="email" placeholder="Enter your email" aria-label="Email address" required>
+        <button class="btn btn-warning px-4" type="submit">Subscribe</button>
+      </form>
+      <p class="small mt-3 mb-0 opacity-75" id="newsletterMsg" role="status"></p>
+    </div>
+  </section>
+
+  <!-- ===================== SAVANNA HORIZON ===================== -->
+  <div class="horizon" aria-hidden="true">
+    <div class="sun"></div>
+    <svg class="tree" viewBox="0 0 200 140" width="190" height="133" style="left:6%">
+      <path
+        d="M10 52 C30 30 70 22 100 24 C135 22 175 30 192 50 C170 58 130 60 100 58 C70 60 30 60 10 52Z M95 140 L98 90 L78 58 L84 57 L100 82 L117 56 L123 57 L104 92 L107 140Z" />
+    </svg>
+    <svg class="tree" viewBox="0 0 200 140" width="130" height="91" style="right:9%">
+      <path
+        d="M10 52 C30 30 70 22 100 24 C135 22 175 30 192 50 C170 58 130 60 100 58 C70 60 30 60 10 52Z M95 140 L98 90 L78 58 L84 57 L100 82 L117 56 L123 57 L104 92 L107 140Z" />
+    </svg>
+    <div class="herd">
+      <img class="sil opt" src="images/zebra.png" alt="" width="80" height="54">
+      <img class="sil" src="images/girafu.png" alt="" width="78" height="127">
+      <img class="sil" src="images/elephant.png" alt="" width="150" height="97">
+      <img class="sil opt" src="images/rheno.png" alt="" width="96" height="55">
+      <img class="sil" src="images/lion.png" alt="" width="84" height="53">
+      <img class="sil opt" src="images/buffu.png" alt="" width="80" height="66">
+      <img class="sil" src="images/goli.png" alt="" width="62" height="60">
+    </div>
+    <div class="ground"></div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <img src="images/gratius-logo.png" alt="Gratius Tours and Travel" class="footer-logo mb-3" width="130" height="130" loading="lazy">
+          <p class="opacity-75 mb-1">Your trusted partner in exploring Uganda's wildlife, culture and unforgettable
+            adventures. Private, tailor-made safaris planned by local experts.</p>
+          <p class="footer-tagline">Explore Africa. Discover More.</p>
+          <div class="social mt-3">
+            <a href="https://www.facebook.com/share/14Tp9AVRorJ/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/deangratius" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/gratiustours" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/256742015425" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-6 col-lg-2 f-links">
+          <h5>Explore</h5>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="tours.html">Tours &amp; Packages</a>
+          <a href="photo_album.html">Photo Album</a>
+          <a href="contact.html">Contact</a>
+          <a href="booking.html">Book a Safari</a>
+        </div>
+        <div class="col-6 col-lg-3 f-links">
+          <h5>Top Tours</h5>
+          <a href="gorilla.html">Gorilla Tracking</a>
+          <a href="tour8.html">Chimpanzee Tracking</a>
+          <a href="elizabeth.html">Queen Elizabeth Safari</a>
+          <a href="tour5.html">Murchison Falls</a>
+          <a href="tour9.html">Kidepo Valley</a>
+        </div>
+        <div class="col-lg-3">
+          <h5>Get in Touch</h5>
+          <div class="contact-line"><i class="fa-solid fa-location-dot"></i><span>Kampala, Uganda</span></div>
+          <div class="contact-line"><i class="fa-brands fa-whatsapp"></i><a href="https://wa.me/256742015425" target="_blank" rel="noopener">+256 742 015425</a></div>
+          <div class="contact-line"><i class="fa-solid fa-envelope"></i><a href="mailto:gratiustoursandtravel@gmail.com">gratiustoursandtravel@gmail.com</a></div>
+          <div class="contact-line"><i class="fa-brands fa-x-twitter"></i><a href="https://x.com/gratiustours" target="_blank" rel="noopener">@gratiustours</a></div>
+        </div>
+      </div>
+      <hr class="my-4">
+      <div class="d-flex flex-wrap justify-content-between gap-2 small">
+        <span>© 2026 Gratius Tours and Travel. All rights reserved.</span>
+        <span>Designed with ❤️ in Uganda · Created by <span class="text-warning fw-semibold">Syrix Technologies</span></span>
+      </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    // ===== JS FUNCTIONALITY (UNCHANGED LOGIC) =====
-
-    // Navbar scroll
-    window.addEventListener("scroll", function () {
-      const nav = document.querySelector(".navbar");
-      if (window.scrollY > 60) {
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-    });
-
-    // Carousel auto
-    var carousel = document.querySelector('#carouselExampleIndicators');
-    if (carousel) {
-      new bootstrap.Carousel(carousel, {
-        interval: 4000,
-        ride: "carousel"
-      });
-    }
-
-    // Newsletter
-    const form = document.querySelector("form");
-    if (form) {
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        let email = this.querySelector("input[type=email]");
-
-        if (email.value.includes("@")) {
-          alert("Thank you for subscribing!");
-          email.value = "";
-        } else {
-          alert("Please enter a valid email");
-        }
-      });
-    }
-
-    // Scroll reveal
-    const faders = document.querySelectorAll(".col-md-4, .testimonial");
-
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    faders.forEach(el => {
-      el.classList.add("fade-in");
-      observer.observe(el);
-    });
-    // cards 
-    // Make cards feel clickable like real destinations
-    document.querySelectorAll(".card").forEach(card => {
-      card.addEventListener("click", () => {
-        card.style.transform = "scale(.98)";
-        setTimeout(() => card.style.transform = "", 120);
-      });
-    });
-    // Animate Why Travel section on scroll
-    document.querySelectorAll(".row.g-4 > div").forEach(el => {
-      el.classList.add("why-item");
-    });
-
-    const whyObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
-      });
-    });
-
-    document.querySelectorAll(".why-item").forEach(el => {
-      whyObserver.observe(el);
-    });
-
-
-  </script>
-
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="js/site.js"></script>
+  <script src="js/home.js"></script>
 </body>
 
 </html>
