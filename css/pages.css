@@ -138,7 +138,7 @@ footer .contact-line i { color: #f4c430; margin-top: .3rem; }
 .team-card h5 { font-weight: 700; margin-bottom: .1rem; }
 .team-card .role { color: var(--safari-gold-dark); font-weight: 600; font-size: .88rem; margin-bottom: .6rem; }
 .team-card p { color: var(--muted); font-size: .9rem; margin: 0; }
-.team-card .ph.initials { display: grid; place-items: center; height: 200px;
+.team-card .ph.initials { display: grid; place-items: center; height: 260px;
   background: linear-gradient(160deg, var(--safari-blue), var(--safari-green)); }
 .team-card .ph.initials span { width: 110px; height: 110px; border-radius: 50%; display: grid; place-items: center;
   background: rgba(255,255,255,.12); border: 3px solid var(--safari-gold); color: var(--safari-gold);
